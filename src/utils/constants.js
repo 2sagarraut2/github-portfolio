@@ -178,3 +178,13 @@ export const MENUS = [
     ),
   },
 ];
+
+// About
+// Profile
+export const livingIn = "I am an enthusiastic Front-end developer. Living in ";
+export const pcmc = "PCMC, Pune, India.";
+export const workingWith =
+  "I am a Software Engineer, currently working with awesome folks at ";
+export const haveALook = "Have a look at my ";
+export const skills = ", skills or just connect with me on ";
+export const excited = "I am always excited to enhance my knowledge.";

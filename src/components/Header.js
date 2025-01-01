@@ -8,7 +8,7 @@ const Header = () => {
         <div className="flex p-2 justify-between bg-[#f6f8fa] pt-2">
           <div className="flex">
             <div className="flex mx-2">
-              <button className="rounded-lg border-[1px] border-gray-200 px-2 py-2 text-sm">
+              <button className="rounded-lg border-[1px] border-gray-200 px-2 py-2 text-sm hover:bg-[#ebeef1]">
                 <svg
                   aria-hidden="true"
                   height="16"
@@ -23,7 +23,7 @@ const Header = () => {
               </button>
             </div>
             <div className="mx-2 flex">
-              <button className="border-gray-200 text-sm">
+              <button className="border-gray-200 text-sm rounded-lg ">
                 <svg
                   height="32"
                   aria-hidden="true"
@@ -40,17 +40,17 @@ const Header = () => {
             <div className="mx-1 flex">
               <div className=" inline-flex w-full min-w-0 max-w-full overflow-hidden">
                 <nav className="w-full">
-                  <ul className="flex flex-row pt-2">
-                    <li className="w-full text-sm">
+                  <ul className="flex flex-row pt-2 ">
+                    <li className="w-full text-sm rounded-lg hover:bg-[#ebeef1]">
                       <span>
-                        <button className="mx-2">sagarraut</button>
+                        <button className="mx-2 ">sagarraut</button>
                       </span>
                     </li>
-                    <li className="w-full text-sm">
+                    <li className="w-full text-sm ">
                       <span className="mx-2">/</span>
                     </li>
-                    <li className="w-full text-sm">
-                      <button className="font-medium mx-2">portfolio</button>
+                    <li className="w-full text-sm rounded-lg hover:bg-[#ebeef1]">
+                      <button className="font-medium mx-2 ">portfolio</button>
                     </li>
                   </ul>
                 </nav>
@@ -62,12 +62,12 @@ const Header = () => {
               {/* search input */}
               <div className="mx-1 flex text-sm mt-1">
                 <input
-                  className="rounded bg-[#f6f8fa] h-8 border-[1px] border-gray-200"
+                  className="px-3 rounded bg-[#f6f8fa] h-8 border-[1px] border-gray-200"
                   placeholder="Type / to search"
                 />
               </div>
               <div className="mx-1 flex text-sm">
-                <button className="rounded-lg border-[1px] border-gray-200 px-2 py-2 inline-flex items-center">
+                <button className="rounded-lg border-[1px] border-gray-200 px-2 py-2 inline-flex items-center hover:bg-[#ebeef1]">
                   <svg
                     aria-hidden="true"
                     height="16"
@@ -93,7 +93,7 @@ const Header = () => {
                 </button>
               </div>
               <div className="mx-1 flex text-sm">
-                <button className="rounded-lg border-[1px] border-gray-200 px-2 py-2">
+                <button className="rounded-lg border-[1px] border-gray-200 px-2 py-2 hover:bg-[#ebeef1]">
                   <svg
                     aria-hidden="true"
                     height="16"
@@ -109,7 +109,7 @@ const Header = () => {
                 </button>
               </div>
               <div className="mx-1 flex text-sm">
-                <button className="rounded-lg border-[1px] border-gray-200 px-2 py-2">
+                <button className="rounded-lg border-[1px] border-gray-200 px-2 py-2 hover:bg-[#ebeef1]">
                   <svg
                     aria-hidden="true"
                     height="16"
@@ -124,7 +124,7 @@ const Header = () => {
                 </button>
               </div>
               <div className="mx-1 flex text-sm">
-                <button className="rounded-lg border-[1px] border-gray-200 px-2 py-2">
+                <button className="rounded-lg border-[1px] border-gray-200 px-2 py-2 hover:bg-[#ebeef1]">
                   <svg
                     aria-hidden="true"
                     height="16"

@@ -1,21 +1,43 @@
+import { useState } from "react";
+import ReadMe from "./ReadMe";
+import Index from "./Index";
+import About from "./About";
+import Projects from "./Projects";
+
 const Body = () => {
+  const [activeComponent, setActiveComponent] = useState("README");
+
+  // Function to handle button clicks
+  const handleButtonClick = (component) => {
+    setActiveComponent(component);
+  };
+
   return (
     <div>
       <div className="pt-4">
         <div className="mx-28 px-9 ">
           <div className="border-b-[1px] flex grid-cols-2 gap-8 justify-between pb-4">
             <ul className="flex gap-4 grid-cols-3">
-              <li className="inline-flex">
-                <img
-                  src="https://avatars.githubusercontent.com/u/36417693?v=4"
-                  alt="avatar"
-                  data-view-component="true"
-                  className="size-8 h-8 rounded-full avatar circle"
-                />
-              </li>
-              <li className="flex items-center">
-                <div className="font-bold">portfolio</div>
-              </li>
+              <a
+                href="https://github.com/2sagarraut2/portfolio"
+                className="flex gap-4 grid-cols-3"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <li className="inline-flex">
+                  <img
+                    src="https://avatars.githubusercontent.com/u/36417693?v=4"
+                    alt="avatar"
+                    data-view-component="true"
+                    className="size-8 h-8 rounded-full avatar circle"
+                  />
+                </li>
+                <li className="flex items-center">
+                  <div className="font-bold hover:underline-offset-1 text-xl">
+                    portfolio
+                  </div>
+                </li>
+              </a>
               <li className="flex items-center rounded-full border-[1px] border-gray-200 text-[#59636e] px-2">
                 <span className="text-xs">Public</span>
               </li>
@@ -23,7 +45,7 @@ const Body = () => {
 
             <ul className="flex gap-4 grid-cols-4 text-xs">
               <li className="inline-flex">
-                <button className="rounded-lg border-[1px] border-gray-200 p-2 inline-flex items-center bg-[#f6f8fa]">
+                <button className="rounded-lg border-[1px] border-gray-200 p-2 inline-flex items-center bg-[#f6f8fa] hover:bg-[#ebeef1]">
                   <svg
                     aria-hidden="true"
                     height="16"
@@ -39,7 +61,7 @@ const Body = () => {
                 </button>
               </li>
               <li className="inline-flex">
-                <button className="rounded-lg border-[1px] border-gray-200 px-3 inline-flex items-center bg-[#f6f8fa]">
+                <button className="rounded-lg border-[1px] border-gray-200 px-3 inline-flex items-center bg-[#f6f8fa] hover:bg-[#ebeef1]">
                   <span
                     data-component="leadingVisual"
                     className="prc-Button-Visual-2epfX prc-Button-VisualWrap-Db-eB mr-2"
@@ -76,7 +98,7 @@ const Body = () => {
                 </button>
               </li>
               <li className="inline-flex">
-                <button className="rounded-lg border-[1px] border-gray-200 px-3 inline-flex items-center bg-[#f6f8fa]">
+                <button className="rounded-lg border-[1px] border-gray-200 px-3 inline-flex items-center bg-[#f6f8fa] hover:bg-[#ebeef1]">
                   <span className="">
                     <svg
                       aria-hidden="true"
@@ -107,7 +129,7 @@ const Body = () => {
                 </button>
               </li>
               <li className="inline-flex">
-                <button className="rounded-lg border-[1px] border-gray-200 px-3 inline-flex items-center bg-[#f6f8fa]">
+                <button className="rounded-lg border-[1px] border-gray-200 px-3 inline-flex items-center bg-[#f6f8fa] hover:bg-[#ebeef1]">
                   <span>
                     <svg
                       aria-hidden="true"
@@ -149,7 +171,7 @@ const Body = () => {
                 <section className="flex text-sm h-fit flex-grow">
                   <ul className="flex text-sm h-fit flex-grow justify-between">
                     <li className="pt-2">
-                      <button className="rounded-lg border-[1px] border-gray-200 px-3 py-[6px] inline-flex items-center bg-[#f6f8fa]">
+                      <button className="rounded-lg border-[1px] border-gray-200 px-3 py-[6px] inline-flex items-center bg-[#f6f8fa] hover:bg-[#ebeef1]">
                         <span className="mr-2">
                           <svg
                             aria-hidden="true"
@@ -192,7 +214,7 @@ const Body = () => {
                       </button>
                     </li>
                     <li className="p-2">
-                      <button className="rounded-lg px-3 py-[6px] inline-flex items-center bg-[#f6f8fa]">
+                      <button className="rounded-lg px-3 py-[6px] inline-flex items-center hover:bg-[#ebeef1]">
                         <span className="mr-[2px]">
                           <svg
                             aria-hidden="true"
@@ -217,7 +239,7 @@ const Body = () => {
                       </button>
                     </li>
                     <li className="p-2">
-                      <button className="rounded-lg px-3 py-[6px] inline-flex items-center bg-[#f6f8fa] cursor-pointer">
+                      <button className="rounded-lg px-3 py-[6px] inline-flex items-center cursor-pointer hover:bg-[#ebeef1]">
                         <span className="mr-[2px]">
                           <svg
                             aria-hidden="true"
@@ -244,11 +266,14 @@ const Body = () => {
 
                     <li className="p-2">
                       <span>
-                        <input className="rounded-lg px-3 py-[6px] inline-flex items-center text-sm border-[1px] border-gray-200" />
+                        <input
+                          placeholder="Go to file"
+                          className="rounded-lg px-3 py-[6px] inline-flex items-center text-sm border-[1px] border-gray-200"
+                        />
                       </span>
                     </li>
                     <li className="p-2">
-                      <button className="rounded-lg px-3 py-[6px] inline-flex items-center bg-[#f6f8fa] text-sm border-[1px] border-gray-200">
+                      <button className="rounded-lg px-3 py-[6px] inline-flex items-center bg-[#f6f8fa] text-sm border-[1px] border-gray-200 hover:bg-[#ebeef1]">
                         <span className="mr-2">
                           <svg
                             aria-hidden="true"
@@ -291,7 +316,7 @@ const Body = () => {
                       </button>
                     </li>
                     <li className="p-2">
-                      <button className="rounded-lg px-3 py-[6px] inline-flex items-center text-sm bg-[#1f883d] border-[#1f232826] text-white">
+                      <button className="rounded-lg px-3 py-[6px] inline-flex items-center text-sm bg-[#1f883d] border-[#1f232826] text-white hover:bg-[#2f8c3e]">
                         <span className="mr-2">
                           <svg
                             aria-hidden="true"
@@ -338,18 +363,20 @@ const Body = () => {
               <div className="mt-3 w-fit">
                 <div className="rounded-lg border-[1px] border-gray-200">
                   <div className="">
-                    <div className="flex-col">
+                    <div className="flex-col ">
                       <ul className="flex text-sm flex-grow w-full border-b-[1px] border-gray-200">
-                        <li className="flex py-3 px-4 bg-[#f6f8fa] items-center">
-                          <span className="pr-2">
-                            <img
-                              src="https://avatars.githubusercontent.com/u/36417693?v=4"
-                              alt="avatar"
-                              data-view-component="true"
-                              className="size-6 h-6 rounded-full avatar circle"
-                            />
-                          </span>
-                          sagarraut
+                        <li className="">
+                          <button className="flex py-3 px-4 bg-[#f6f8fa] items-center rounded-lg text-[#0000EE]">
+                            <span className="pr-2">
+                              <img
+                                src="https://avatars.githubusercontent.com/u/36417693?v=4"
+                                alt="avatar"
+                                data-view-component="true"
+                                className="size-6 h-6 rounded-full avatar circle"
+                              />
+                            </span>
+                            <span>sagarraut</span>
+                          </button>
                         </li>
                         <li className="flex py-3 px-2 bg-[#f6f8fa] items-center">
                           <p>Merge pull request</p>
@@ -360,7 +387,7 @@ const Body = () => {
                         <li className="flex py-3 px-2 bg-[#f6f8fa] items-center">
                           <p>
                             from 2sagarraut2/2024-12-09-update-changes
-                            <span className="ml-3">
+                            <span className="ml-3 py-1 px-2 rounded-lg hover:bg-[#ebeef1] cursor-pointer">
                               <svg
                                 aria-hidden="true"
                                 focusable="false"
@@ -382,11 +409,11 @@ const Body = () => {
                           </p>
                         </li>
 
-                        <li className="flex py-3 px-2 bg-[#f6f8fa] items-center">
+                        <li className="flex py-3 px-2 bg-[#f6f8fa] items-center text-xs">
                           <p>c7372cb · last week</p>
                         </li>
-                        <li className="flex py-3 px-2 bg-[#f6f8fa] items-center">
-                          <span className="mr-2">
+                        <li className="flex py-3 px-2 bg-[#f6f8fa] items-center rounded-lg">
+                          <span className="mr-2 ">
                             <svg
                               aria-hidden="true"
                               focusable="false"
@@ -408,8 +435,8 @@ const Body = () => {
                           <span>5 Commits</span>
                         </li>
                       </ul>
-                      <ul className="flex text-sm flex-grow w-full border-b-[1px] border-gray-200 justify-between">
-                        <li className="flex-grow w-[33%] py-2 px-4 items-center">
+                      <ul className="flex text-sm flex-grow w-full border-b-[1px] border-gray-200 justify-between hover:bg-[#ebeef1]">
+                        <li className="flex-grow w-[33%] py-2.5 px-4 items-center ">
                           <span className="pl-[2px] pr-4">
                             <svg
                               aria-hidden="true"
@@ -429,14 +456,16 @@ const Body = () => {
                               <path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path>
                             </svg>
                           </span>
-                          <span>index.html</span>
+                          <button onClick={() => handleButtonClick("index")}>
+                            <span>index.html</span>
+                          </button>
                         </li>
-                        <li className="flex-grow w-[33%] py-3 px-4 items-center">
+                        <li className="flex-grow w-[33%] py-2.5 px-4 items-center">
                           <span>
                             <p>Profile information added!</p>
                           </span>
                         </li>
-                        <li className="flex-grow w-[33%] py-3 px-4 items-center flex justify-end">
+                        <li className="flex-grow w-[33%] py-2.5 px-4 items-center flex justify-end">
                           <span>
                             <p>last week</p>
                           </span>
@@ -444,8 +473,8 @@ const Body = () => {
                       </ul>
 
                       {/* About.js */}
-                      <ul className="flex text-sm flex-grow w-full border-b-[1px] border-gray-200 justify-between">
-                        <li className="flex-grow w-[33%] py-3 px-4 items-center">
+                      <ul className="flex text-sm flex-grow w-full border-b-[1px] border-gray-200 justify-between hover:bg-[#ebeef1]">
+                        <li className="flex-grow w-[33%] py-2.5 px-4 items-center">
                           <span className="pl-[2px] pr-4">
                             <svg
                               aria-hidden="true"
@@ -465,19 +494,23 @@ const Body = () => {
                               <path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path>
                             </svg>
                           </span>
-                          about.js
+                          <button onClick={() => handleButtonClick("about")}>
+                            <span>about.js</span>
+                          </button>
                         </li>
-                        <li className="flex-grow w-[33%] py-3 px-4 items-center">
-                          About me!
+                        <li className="flex-grow w-[33%] py-2.5 px-4 items-center">
+                          About me added!
                         </li>
-                        <li className="flex-grow w-[33%] py-3 px-4 items-center flex justify-end">
+                        <li className="flex-grow w-[33%] py-2.5 px-4 items-center flex justify-end">
                           <span>
                             <p>last week</p>
                           </span>
                         </li>
                       </ul>
-                      <ul className="flex text-sm flex-grow w-full border-b-[1px] border-gray-200 justify-between">
-                        <li className="flex-grow w-[33%] py-3 px-4 items-center">
+
+                      {/* Projects.js */}
+                      <ul className="flex text-sm flex-grow w-full border-b-[1px] border-gray-200 justify-between hover:bg-[#ebeef1]">
+                        <li className="flex-grow w-[33%] py-2.5 px-4 items-center">
                           <span className="pl-[2px] pr-4">
                             <svg
                               aria-hidden="true"
@@ -497,12 +530,14 @@ const Body = () => {
                               <path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path>
                             </svg>
                           </span>
-                          projects.js
+                          <button onClick={() => handleButtonClick("projects")}>
+                            <span>projects.js</span>
+                          </button>
                         </li>
-                        <li className="flex-grow w-[33%] py-3 px-4 items-center">
+                        <li className="flex-grow w-[33%] py-2.5 px-4 items-center">
                           Projects added!
                         </li>
-                        <li className="flex-grow w-[33%] py-3 px-4 items-center flex justify-end">
+                        <li className="flex-grow w-[33%] py-2.5 px-4 items-center flex justify-end">
                           <span>
                             <p>last week</p>
                           </span>
@@ -510,7 +545,7 @@ const Body = () => {
                       </ul>
 
                       {/* Style.css */}
-                      <ul className="flex text-sm flex-grow w-full border-b-[1px] border-gray-200 justify-between">
+                      {/* <ul className="flex text-sm flex-grow w-full border-b-[1px] border-gray-200 justify-between">
                         <li className="flex-grow w-[33%] py-3 px-4 items-center">
                           <span className="pl-[2px] pr-4">
                             <svg
@@ -541,11 +576,11 @@ const Body = () => {
                             <p>last week</p>
                           </span>
                         </li>
-                      </ul>
+                      </ul> */}
 
                       {/* README.md */}
-                      <ul className="flex text-sm flex-grow w-full justify-between">
-                        <li className="flex-grow w-[33%] py-3 px-4 items-center">
+                      <ul className="flex text-sm flex-grow w-full justify-between hover:bg-[#ebeef1]">
+                        <li className="flex-grow w-[33%] py-2.5 px-4 items-center">
                           <span className="pl-[2px] pr-4">
                             <svg
                               aria-hidden="true"
@@ -565,12 +600,14 @@ const Body = () => {
                               <path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path>
                             </svg>
                           </span>
-                          README.md
+                          <button onClick={() => handleButtonClick("README")}>
+                            <span>README.md</span>
+                          </button>
                         </li>
-                        <li className="flex-grow w-[33%] py-3 px-4 items-center">
+                        <li className="flex-grow w-[33%] py-2.5 px-4 items-center">
                           Readme file added!
                         </li>
-                        <li className="flex-grow w-[33%] py-3 px-4 items-center flex justify-end">
+                        <li className="flex-grow w-[33%] py-2.5 px-4 items-center flex justify-end">
                           <span>
                             <p>last week</p>
                           </span>
@@ -584,31 +621,35 @@ const Body = () => {
                 <div className="mt-5 rounded-lg border-[1px] border-gray-200">
                   <div>
                     <div className="flex-col rounded-lg px-2">
-                      <ul className="text-sm w-full flex border-b-[1px] border-gray-200">
-                        <li className="flex py-2 pt-4 px-2 rounded-lg flex-grow">
-                          <span className="mr-2">
-                            <svg
-                              aria-hidden="true"
-                              focusable="false"
-                              className="octicon octicon-book"
-                              viewBox="0 0 16 16"
-                              width="16"
-                              height="16"
-                              fill="currentColor"
-                              style={{
-                                display: "inline-block",
-                                userSelect: "none",
-                                verticalAlign: "text-bottom",
-                                overflow: "visible",
-                              }}
-                            >
-                              <path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z"></path>
-                            </svg>
-                          </span>
-                          <span className="pr-2">README</span>
+                      <ul className="w-full flex border-b-[1px] border-gray-200">
+                        <li className="flex py-2 pt-4 px-2 flex-grow text-sm font-semibold text-red-400 ">
+                          <button className="py-1 px-2 cursor-pointer hover:bg-[#ebeef1] rounded-lg">
+                            <span className="mr-2">
+                              <svg
+                                aria-hidden="true"
+                                focusable="false"
+                                className="octicon octicon-book"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                style={{
+                                  display: "inline-block",
+                                  userSelect: "none",
+                                  verticalAlign: "text-bottom",
+                                  overflow: "visible",
+                                }}
+                              >
+                                <path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z"></path>
+                              </svg>
+                            </span>
+                            <span className="pr-2">
+                              {activeComponent || "None Selected"}
+                            </span>
+                          </button>
                         </li>
                         <li className="flex py-2 pt-4 px-2 rounded-lg">
-                          <button className="mr-2">
+                          <button className="py-1 px-2 rounded-lg hover:bg-[#ebeef1]">
                             <svg
                               aria-hidden="true"
                               focusable="false"
@@ -627,7 +668,7 @@ const Body = () => {
                               <path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"></path>
                             </svg>
                           </button>
-                          <button className="pr-2">
+                          <button className="py-1 px-2 rounded-lg hover:bg-[#ebeef1]">
                             <svg
                               aria-hidden="true"
                               focusable="false"
@@ -648,11 +689,15 @@ const Body = () => {
                           </button>
                         </li>
                       </ul>
-                      <ul className="text-sm rounded-lg w-full flex">
-                        <li className="flex py-2 pt-4 px-2 rounded-lg">
-                          <h1>File data </h1>
-                        </li>
-                      </ul>
+                      <div className="rounded-lg w-full flex p-8">
+                        {/* file content here */}
+                        {activeComponent === "index" && <Index />}
+                        {activeComponent === "about" && <About />}
+                        {activeComponent === "projects" && <Projects />}
+                        {activeComponent === "README" && (
+                          <ReadMe onClick={handleButtonClick} />
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -668,7 +713,7 @@ const Body = () => {
                       <h2 className="text-sm font-semibold">About</h2>
                     </div>
                     <div>
-                      <span>
+                      <span className="py-1 px-2 rounded-lg hover:bg-[#ebeef1] cursor-pointer">
                         <svg
                           aria-label="Edit repository metadata"
                           role="img"
@@ -677,7 +722,7 @@ const Body = () => {
                           version="1.1"
                           width="16"
                           data-view-component="true"
-                          className="octicon octicon-gear float-right"
+                          className="octicon octicon-gear float-right "
                         >
                           <path d="M8 0a8.2 8.2 0 0 1 .701.031C9.444.095 9.99.645 10.16 1.29l.288 1.107c.018.066.079.158.212.224.231.114.454.243.668.386.123.082.233.09.299.071l1.103-.303c.644-.176 1.392.021 1.82.63.27.385.506.792.704 1.218.315.675.111 1.422-.364 1.891l-.814.806c-.049.048-.098.147-.088.294.016.257.016.515 0 .772-.01.147.038.246.088.294l.814.806c.475.469.679 1.216.364 1.891a7.977 7.977 0 0 1-.704 1.217c-.428.61-1.176.807-1.82.63l-1.102-.302c-.067-.019-.177-.011-.3.071a5.909 5.909 0 0 1-.668.386c-.133.066-.194.158-.211.224l-.29 1.106c-.168.646-.715 1.196-1.458 1.26a8.006 8.006 0 0 1-1.402 0c-.743-.064-1.289-.614-1.458-1.26l-.289-1.106c-.018-.066-.079-.158-.212-.224a5.738 5.738 0 0 1-.668-.386c-.123-.082-.233-.09-.299-.071l-1.103.303c-.644.176-1.392-.021-1.82-.63a8.12 8.12 0 0 1-.704-1.218c-.315-.675-.111-1.422.363-1.891l.815-.806c.05-.048.098-.147.088-.294a6.214 6.214 0 0 1 0-.772c.01-.147-.038-.246-.088-.294l-.815-.806C.635 6.045.431 5.298.746 4.623a7.92 7.92 0 0 1 .704-1.217c.428-.61 1.176-.807 1.82-.63l1.102.302c.067.019.177.011.3-.071.214-.143.437-.272.668-.386.133-.066.194-.158.211-.224l.29-1.106C6.009.645 6.556.095 7.299.03 7.53.01 7.764 0 8 0Zm-.571 1.525c-.036.003-.108.036-.137.146l-.289 1.105c-.147.561-.549.967-.998 1.189-.173.086-.34.183-.5.29-.417.278-.97.423-1.529.27l-1.103-.303c-.109-.03-.175.016-.195.045-.22.312-.412.644-.573.99-.014.031-.021.11.059.19l.815.806c.411.406.562.957.53 1.456a4.709 4.709 0 0 0 0 .582c.032.499-.119 1.05-.53 1.456l-.815.806c-.081.08-.073.159-.059.19.162.346.353.677.573.989.02.03.085.076.195.046l1.102-.303c.56-.153 1.113-.008 1.53.27.161.107.328.204.501.29.447.222.85.629.997 1.189l.289 1.105c.029.109.101.143.137.146a6.6 6.6 0 0 0 1.142 0c.036-.003.108-.036.137-.146l.289-1.105c.147-.561.549-.967.998-1.189.173-.086.34-.183.5-.29.417-.278.97-.423 1.529-.27l1.103.303c.109.029.175-.016.195-.045.22-.313.411-.644.573-.99.014-.031.021-.11-.059-.19l-.815-.806c-.411-.406-.562-.957-.53-1.456a4.709 4.709 0 0 0 0-.582c-.032-.499.119-1.05.53-1.456l.815-.806c.081-.08.073-.159.059-.19a6.464 6.464 0 0 0-.573-.989c-.02-.03-.085-.076-.195-.046l-1.102.303c-.56.153-1.113.008-1.53-.27a4.44 4.44 0 0 0-.501-.29c-.447-.222-.85-.629-.997-1.189l-.289-1.105c-.029-.11-.101-.143-.137-.146a6.6 6.6 0 0 0-1.142 0ZM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM9.5 8a1.5 1.5 0 1 0-3.001.001A1.5 1.5 0 0 0 9.5 8Z"></path>
                         </svg>
