@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div>
       <header className="App-header">
-        <div className="flex p-2 justify-between bg-[#f6f8fa] pt-2">
+        <div className="flex p-2 justify-between bg-[#f6f8fa] pt-4">
           <div className="flex">
             <div className="flex mx-2">
               <button className="rounded-lg border-[1px] border-gray-200 px-2 py-2 text-sm hover:bg-[#ebeef1]">
@@ -62,6 +62,7 @@ const Header = () => {
               {/* search input */}
               <div className="mx-1 flex text-sm mt-1">
                 <input
+                  name="global-search"
                   className="px-3 rounded bg-[#f6f8fa] h-8 border-[1px] border-gray-200"
                   placeholder="Type / to search"
                 />
@@ -155,7 +156,7 @@ const Header = () => {
         <div>
           <div className="mt px-4 flex bg-[#f6f8fa]">
             <nav className="">
-              <ul className="flex mx-2 mt-2 items-center gap-2">
+              <ul className="flex items-center">
                 {MENUS.map((MENU) => {
                   return <HeaderMenus key={MENU.id} MENU={MENU} />;
                 })}

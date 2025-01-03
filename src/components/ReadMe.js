@@ -21,7 +21,7 @@ const ReadMe = ({ onClick }) => {
           Click on{" "}
           <button
             className="underline-offset-4 text-[#0000EE]"
-            onClick={() => onClick("A")}
+            onClick={() => onClick("index")}
           >
             index.html
           </button>{" "}
@@ -31,7 +31,7 @@ const ReadMe = ({ onClick }) => {
           Click on{" "}
           <button
             className="underline-offset-4 text-[#0000EE]"
-            onClick={() => onClick("B")}
+            onClick={() => onClick("about")}
           >
             about.js
           </button>{" "}
@@ -41,7 +41,7 @@ const ReadMe = ({ onClick }) => {
           Click on{" "}
           <button
             className="underline-offset-4 text-[#0000EE]"
-            onClick={() => onClick("C")}
+            onClick={() => onClick("projects")}
           >
             projects.js
           </button>{" "}
@@ -51,7 +51,7 @@ const ReadMe = ({ onClick }) => {
           Click on{" "}
           <button
             className="underline-offset-4 text-[#0000EE]"
-            onClick={() => onClick("D")}
+            onClick={() => onClick("README")}
           >
             README.md
           </button>{" "}

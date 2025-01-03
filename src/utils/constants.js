@@ -188,3 +188,34 @@ export const workingWith =
 export const haveALook = "Have a look at my ";
 export const skills = ", skills or just connect with me on ";
 export const excited = "I am always excited to enhance my knowledge.";
+
+export const PROJECTS = [
+  {
+    id: 1,
+    title: "Loan Management System",
+    description:
+      "The Loan Management System is a comprehensive web application designed to streamline and manage the end-to-end lifecycle of loan processing. This system provides a user-friendly interface and robust backend to handle all critical functionalities related to loans, from initiation to closure. It ensures seamless integration with payment systems.",
+    link: "https://github.com/2sagarraut2/loan-management-system",
+  },
+  {
+    id: 2,
+    title: "Swiggy WebApp clone",
+    description:
+      "The Swiggy Web-App Clone is a feature-rich, responsive web application built to emulate the core functionalities and user experience of the Swiggy food delivery platform. This project demonstrates expertise in building scalable, user-friendly interfaces, seamless API integration, and real-time data handling, ensuring an interactive and intuitive user experience.",
+    link: "https://github.com/2sagarraut2/deliveryapp",
+  },
+  {
+    id: 3,
+    title: "Github Portfolio",
+    description:
+      "The GitHub Portfolio Web-App Clone is a sleek and professional portfolio web application inspired by GitHub's repository user interface. This project combines functionality with aesthetics, providing a clean, intuitive design for showcasing projects, skills, and achievements in a format that resonates with developers and recruiters.",
+    link: "https://github.com/2sagarraut2/github-portfolio",
+  },
+  {
+    id: 4,
+    title: "Shopping Cart",
+    description:
+      "The Shopping Cart Project is a modular and reusable feature designed to replicate the 'Add to Cart' functionality commonly found in e-commerce websites. Built using Redux, this project provides a robust solution for managing cart operations efficiently and can be easily integrated into any web application.",
+    link: "https://github.com/2sagarraut2/shopping-cart",
+  },
+];
