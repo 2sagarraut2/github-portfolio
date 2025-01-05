@@ -1,10 +1,13 @@
 import { Octokit } from "@octokit/core";
 import { useEffect, useState } from "react";
+import Loader from "./Loader";
+import { REPOSITORYBUTTONS } from "../utils/constants";
 
 const ListRepositories = () => {
   // eslint-disable-next-line
   const [repoData, setRepoData] = useState([]);
   const [filteredRepoData, setFilteredRepoData] = useState([]);
+  const [loading, setloading] = useState(true);
 
   const token = process.env.REACT_APP_AUTH_TOKEN;
   const octokit = new Octokit({
@@ -37,10 +40,12 @@ const ListRepositories = () => {
 
       //   setting filtered data
       setFilteredRepoData(filteredData);
+      setloading(false);
 
       return response.data; // Return data if needed
     } catch (error) {
       console.error("Error fetching repositories:", error);
+      setloading(false);
     }
   }
 
@@ -85,96 +90,20 @@ const ListRepositories = () => {
             placeholder="Find a reository..."
             className="px-2 flex-1 border-[1px] border-gray-200 rounded-lg"
           />
-          <button className="rounded-lg border-[1px] border-gray-200 px-4 py-[5px] inline-flex items-center bg-[#f6f8fa] hover:bg-[#ebeef1]">
-            Type
-            <span className="ml-2">
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                className="octicon octicon-triangle-down"
-                viewBox="0 0 16 16"
-                width="16"
-                height="16"
-                fill="currentColor"
-                style={{
-                  display: "inline-block",
-                  userSelect: "none",
-                  verticalAlign: "text-bottom",
-                  overflow: "visible",
-                }}
+          {REPOSITORYBUTTONS.map((button) => {
+            return (
+              <button
+                key={button.id}
+                className="rounded-lg border-[1px] border-gray-200 px-4 py-[5px] inline-flex items-center bg-[#f6f8fa] hover:bg-[#ebeef1]"
               >
-                <path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"></path>
-              </svg>
-            </span>
-          </button>
-          <button className="rounded-lg border-[1px] border-gray-200 px-4 py-[5px] inline-flex items-center bg-[#f6f8fa] hover:bg-[#ebeef1]">
-            Language
-            <span className="ml-2">
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                className="octicon octicon-triangle-down"
-                viewBox="0 0 16 16"
-                width="16"
-                height="16"
-                fill="currentColor"
-                style={{
-                  display: "inline-block",
-                  userSelect: "none",
-                  verticalAlign: "text-bottom",
-                  overflow: "visible",
-                }}
-              >
-                <path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"></path>
-              </svg>
-            </span>
-          </button>
-          <button className="rounded-lg border-[1px] border-gray-200 px-4 py-[5px] inline-flex items-center bg-[#f6f8fa] hover:bg-[#ebeef1]">
-            Sort
-            <span className="ml-2">
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                className="octicon octicon-triangle-down"
-                viewBox="0 0 16 16"
-                width="16"
-                height="16"
-                fill="currentColor"
-                style={{
-                  display: "inline-block",
-                  userSelect: "none",
-                  verticalAlign: "text-bottom",
-                  overflow: "visible",
-                }}
-              >
-                <path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"></path>
-              </svg>
-            </span>
-          </button>
-          <button className="rounded-lg border-[1px] border-gray-200 px-4 py-[5px] inline-flex items-center bg-[#f6f8fa] hover:bg-[#ebeef1]">
-            New
-            <span className="ml-2">
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                className="octicon octicon-triangle-down"
-                viewBox="0 0 16 16"
-                width="16"
-                height="16"
-                fill="currentColor"
-                style={{
-                  display: "inline-block",
-                  userSelect: "none",
-                  verticalAlign: "text-bottom",
-                  overflow: "visible",
-                }}
-              >
-                <path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"></path>
-              </svg>
-            </span>
-          </button>
+                {button.label}
+                {button.element}
+              </button>
+            );
+          })}
         </div>
         <div>
+          {loading && <Loader />}
           {filteredRepoData.map((repo) => {
             // console.log(repo);
             const visibility = capitalizeFirstLetter(repo.visibility);

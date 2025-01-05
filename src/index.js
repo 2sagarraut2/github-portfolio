@@ -6,9 +6,9 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Profile from "./components/Profile";
 import ListRepositories from "./components/ListRepositories";
-import EmptyProjects from "./components/EmptyProjects";
-import EmptyPackages from "./components/EmptyPackages";
+import Experience from "./components/Experience";
 import EmptyStars from "./components/EmptyStars";
+import EmptyPackages from "./components/EmptyPackages";
 
 const appRouter = createBrowserRouter([
   {
@@ -24,8 +24,8 @@ const appRouter = createBrowserRouter([
         element: <ListRepositories />,
       },
       {
-        path: "/projects",
-        element: <EmptyProjects />,
+        path: "/experiences",
+        element: <Experience />,
       },
       {
         path: "/packages",

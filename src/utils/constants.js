@@ -202,21 +202,20 @@ export const PROFILEMENUS = [
   },
   {
     id: 3,
-    label: "Projects",
+    label: "Work Experiences",
     element: (
       <svg
-        aria-hidden="true"
-        height="16"
+        className="octicon octicon-organization"
         viewBox="0 0 16 16"
         version="1.1"
         width="16"
-        data-view-component="true"
-        className="octicon octicon-table UnderlineNav-octicon"
+        height="16"
+        aria-hidden="true"
       >
-        <path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v12.5A1.75 1.75 0 0 1 14.25 16H1.75A1.75 1.75 0 0 1 0 14.25ZM6.5 6.5v8h7.75a.25.25 0 0 0 .25-.25V6.5Zm8-1.5V1.75a.25.25 0 0 0-.25-.25H6.5V5Zm-13 1.5v7.75c0 .138.112.25.25.25H5v-8ZM5 5V1.5H1.75a.25.25 0 0 0-.25.25V5Z"></path>
+        <path d="M1.75 16A1.75 1.75 0 0 1 0 14.25V1.75C0 .784.784 0 1.75 0h8.5C11.216 0 12 .784 12 1.75v12.5c0 .085-.006.168-.018.25h2.268a.25.25 0 0 0 .25-.25V8.285a.25.25 0 0 0-.111-.208l-1.055-.703a.749.749 0 1 1 .832-1.248l1.055.703c.487.325.779.871.779 1.456v5.965A1.75 1.75 0 0 1 14.25 16h-3.5a.766.766 0 0 1-.197-.026c-.099.017-.2.026-.303.026h-3a.75.75 0 0 1-.75-.75V14h-1v1.25a.75.75 0 0 1-.75.75Zm-.25-1.75c0 .138.112.25.25.25H4v-1.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 .75.75v1.25h2.25a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25ZM3.75 6h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1 0-1.5ZM3 3.75A.75.75 0 0 1 3.75 3h.5a.75.75 0 0 1 0 1.5h-.5A.75.75 0 0 1 3 3.75Zm4 3A.75.75 0 0 1 7.75 6h.5a.75.75 0 0 1 0 1.5h-.5A.75.75 0 0 1 7 6.75ZM7.75 3h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1 0-1.5ZM3 9.75A.75.75 0 0 1 3.75 9h.5a.75.75 0 0 1 0 1.5h-.5A.75.75 0 0 1 3 9.75ZM7.75 9h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1 0-1.5Z"></path>
       </svg>
     ),
-    path: "/projects",
+    path: "/experiences",
   },
   {
     id: 4,
@@ -294,5 +293,125 @@ export const PROJECTS = [
     description:
       "The Shopping Cart Project is a modular and reusable feature designed to replicate the 'Add to Cart' functionality commonly found in e-commerce websites. Built using Redux, this project provides a robust solution for managing cart operations efficiently and can be easily integrated into any web application.",
     link: "https://github.com/2sagarraut2/shopping-cart",
+  },
+];
+
+export const REPOSITORYBUTTONS = [
+  {
+    id: 1,
+    label: "Type",
+    element: (
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        className="octicon octicon-triangle-down ml-[2px]"
+        viewBox="0 0 16 16"
+        width="16"
+        height="16"
+        fill="currentColor"
+        style={{
+          display: "inline-block",
+          userSelect: "none",
+          verticalAlign: "text-bottom",
+          overflow: "visible",
+        }}
+      >
+        <path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"></path>
+      </svg>
+    ),
+  },
+  {
+    id: 2,
+    label: "Language",
+    element: (
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        className="octicon octicon-triangle-down ml-[2px]"
+        viewBox="0 0 16 16"
+        width="16"
+        height="16"
+        fill="currentColor"
+        style={{
+          display: "inline-block",
+          userSelect: "none",
+          verticalAlign: "text-bottom",
+          overflow: "visible",
+        }}
+      >
+        <path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"></path>
+      </svg>
+    ),
+  },
+  {
+    id: 3,
+    label: "Sort",
+    element: (
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        className="octicon octicon-triangle-down ml-[2px]"
+        viewBox="0 0 16 16"
+        width="16"
+        height="16"
+        fill="currentColor"
+        style={{
+          display: "inline-block",
+          userSelect: "none",
+          verticalAlign: "text-bottom",
+          overflow: "visible",
+        }}
+      >
+        <path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"></path>
+      </svg>
+    ),
+  },
+  {
+    id: 4,
+    label: "New",
+    element: (
+      <svg
+        aria-hidden="true"
+        height="16"
+        viewBox="0 0 16 16"
+        version="1.1"
+        width="16"
+        data-view-component="true"
+        className="octicon octicon-repo ml-[2px]"
+      >
+        <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path>
+      </svg>
+    ),
+  },
+];
+
+export const WORKEXPERIENCES = [
+  {
+    id: 1,
+    role: "Service Desk L1 Engineer",
+    company: "Alten Calsoft Labs",
+    location: "Pune",
+    duration: "Jan 2019 - May 2019",
+  },
+  {
+    id: 2,
+    role: "Associate Analyst",
+    company: "Wipro Technologies",
+    location: "Pune",
+    duration: "Dec 2019 - May 2021",
+  },
+  {
+    id: 3,
+    role: "Software Engineer",
+    company: "Anand Rathi Wealth Limited",
+    location: "Mumbai",
+    duration: "May 2021 - Apr 2022",
+  },
+  {
+    id: 4,
+    role: "Software Engineer",
+    company: "NCSI Technologies (India) Private Limited",
+    location: "Pune",
+    duration: "Apr 2022 - Present",
   },
 ];

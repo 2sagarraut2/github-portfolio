@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Octokit } from "@octokit/core";
+import Loader from "./Loader";
 
 const Sidebar = () => {
   const [userData, setUserData] = useState({
@@ -13,6 +14,8 @@ const Sidebar = () => {
     name: "Sagar Raut",
     blog: "https://2sagarraut2.github.io/portfolio/",
   });
+  const [loading, setloading] = useState(true);
+
   const token = process.env.REACT_APP_AUTH_TOKEN;
   const octokit = new Octokit({
     auth: token, // Replace with your GitHub token
@@ -32,16 +35,19 @@ const Sidebar = () => {
       });
       //   console.log("User Data:", response);
       setUserData(response.data);
+      setloading(false);
     } catch (error) {
       console.error("Error fetching repositories:", error);
+      setloading(false);
     }
   }
 
-  console.log("User Data:", userData);
+  //   console.log("User Data:", userData);
 
   return (
     // first column
     <div className="">
+      {loading && <Loader />}
       {/* bg-gray-200 up */}
       <div className="mt-4">
         <div>

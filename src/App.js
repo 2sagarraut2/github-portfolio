@@ -11,7 +11,7 @@ function App() {
   const showSidebar =
     location.pathname === "/" ||
     location.pathname === "/repositories" ||
-    location.pathname === "/projects" ||
+    location.pathname === "/experiences" ||
     location.pathname === "/packages" ||
     location.pathname === "/stars";
 
@@ -23,10 +23,12 @@ function App() {
       {/* ProfileMenus always displayed */}
       <ProfileMenus />
 
-      <div className="max-w-none mx-32 px-md-4 px-6 mt-2">
+      <div className="max-w-none mx-6 sm:mx-12 md:mx-32 px-6 sm:px-8 md:px-12 mt-2">
         <div
           className={`grid ${
-            showSidebar ? "grid-cols-[25%_75%]" : "grid-cols-1"
+            showSidebar
+              ? "grid-cols-1 sm:grid-cols-[25%_75%] md:grid-cols-[25%_75%]" // 1 column for mobile, 2 columns for larger screens
+              : "grid-cols-1"
           } gap-6`}
         >
           {/* Sidebar displayed on Overview and Repositories pages */}
