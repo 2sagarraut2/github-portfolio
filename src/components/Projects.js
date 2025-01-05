@@ -13,7 +13,7 @@ const Projects = () => {
                     href={item.link}
                     target="_blank"
                     rel="noreferrer"
-                    className=" border-[#0000EE] hover:border-b-[2px] "
+                    className=" border-[#0000EE] hover:border-b-[2px]"
                   >
                     {item.title}
                   </a>

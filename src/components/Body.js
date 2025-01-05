@@ -3,6 +3,8 @@ import ReadMe from "./ReadMe";
 import Index from "./Index";
 import About from "./About";
 import Projects from "./Projects";
+import HeaderMenus from "./HeaderMenus";
+import { REPOMENUS } from "../utils/constants";
 
 const Body = () => {
   const [activeComponent, setActiveComponent] = useState("README");
@@ -14,6 +16,17 @@ const Body = () => {
 
   return (
     <div>
+      <div>
+        <div className="mt px-4 flex bg-[#f6f8fa] border-b-[1px] border-gray-200">
+          <nav className="">
+            <ul className="flex items-center border-b-[1px] border-[#fd8c73]">
+              {REPOMENUS.map((MENU) => {
+                return <HeaderMenus key={MENU.id} MENU={MENU} />;
+              })}
+            </ul>
+          </nav>
+        </div>
+      </div>
       <div className="pt-4">
         <div className="mx-28 px-9 ">
           <div className="border-b-[1px] flex grid-cols-2 gap-8 justify-between pb-4">

@@ -1,7 +1,8 @@
-import { MENUS } from "../utils/constants";
-import HeaderMenus from "./HeaderMenus";
+import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = () => {
+  const params = useLocation();
   return (
     <div>
       <header className="App-header">
@@ -41,17 +42,26 @@ const Header = () => {
               <div className=" inline-flex w-full min-w-0 max-w-full overflow-hidden">
                 <nav className="w-full">
                   <ul className="flex flex-row pt-2 ">
-                    <li className="w-full text-sm rounded-lg hover:bg-[#ebeef1]">
-                      <span>
-                        <button className="mx-2 ">sagarraut</button>
-                      </span>
-                    </li>
-                    <li className="w-full text-sm ">
-                      <span className="mx-2">/</span>
-                    </li>
-                    <li className="w-full text-sm rounded-lg hover:bg-[#ebeef1]">
-                      <button className="font-medium mx-2 ">portfolio</button>
-                    </li>
+                    <Link to="/">
+                      <li className="w-full text-sm rounded-lg hover:bg-[#ebeef1]">
+                        <span>
+                          <button className="mx-2 ">2sagarraut2</button>
+                        </span>
+                      </li>
+                    </Link>
+                    {/* repo view check should go here */}
+                    {params.pathname === "/repository" && (
+                      <>
+                        <li className="w-full text-sm ">
+                          <span className="mx-2">/</span>
+                        </li>
+                        <li className="w-full text-sm rounded-lg hover:bg-[#ebeef1]">
+                          <button className="font-medium mx-2 ">
+                            portfolio
+                          </button>
+                        </li>
+                      </>
+                    )}
                   </ul>
                 </nav>
               </div>
@@ -151,17 +161,6 @@ const Header = () => {
                 />
               </div>
             </div>
-          </div>
-        </div>
-        <div>
-          <div className="mt px-4 flex bg-[#f6f8fa]">
-            <nav className="">
-              <ul className="flex items-center">
-                {MENUS.map((MENU) => {
-                  return <HeaderMenus key={MENU.id} MENU={MENU} />;
-                })}
-              </ul>
-            </nav>
           </div>
         </div>
       </header>
