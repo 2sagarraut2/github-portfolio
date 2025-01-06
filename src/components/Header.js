@@ -1,8 +1,31 @@
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { AVATARURL, HEADERBUTTONELEMENTS } from "../utils/constants";
+import CommonButton from "./CommonButton";
+import Avatar from "./Avatar";
 
 const Header = () => {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
   const params = useLocation();
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 700px)");
+
+    const handleMediaChange = (e) => {
+      setIsSmallScreen(e.matches); // Update state based on media query match
+    };
+
+    // Initial check
+    setIsSmallScreen(mediaQuery.matches);
+
+    // Listen for changes
+    mediaQuery.addEventListener("change", handleMediaChange);
+
+    return () => mediaQuery.removeEventListener("change", handleMediaChange);
+  }, []);
+
   return (
     <div>
       <header className="App-header">
@@ -70,15 +93,28 @@ const Header = () => {
           <div className="flex mx-2">
             <div className="flex">
               {/* search input */}
-              <div className="mx-1 flex text-sm mt-1">
-                <input
-                  name="global-search"
-                  className="px-3 rounded bg-[#f6f8fa] h-8 border-[1px] border-gray-200"
-                  placeholder="Type / to search"
-                />
-              </div>
-              <div className="mx-1 flex text-sm">
-                <button className="rounded-lg border-[1px] border-gray-200 px-2 py-2 inline-flex items-center hover:bg-[#ebeef1]">
+              {!isSmallScreen && (
+                <div className="mx-1 flex text-sm mt-1">
+                  <input
+                    name="global-search"
+                    className="px-3 rounded bg-[#f6f8fa] h-8 border-[1px] border-gray-200"
+                    placeholder="Type / to search"
+                  />
+                </div>
+              )}
+              {!isSmallScreen && (
+                <div className="flex">
+                  {HEADERBUTTONELEMENTS.map((button) => {
+                    return (
+                      <div key={button.id} className="mx-1 flex text-sm">
+                        <CommonButton element={button.element} id={button.id} />
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+              {/* <div className="mx-1 flex text-sm">
+                <button className="rounded-lg border-[1px] border-gray-200 px-4 py-[5px] inline-flex items-center bg-[#f6f8fa] hover:bg-[#ebeef1]">
                   <svg
                     aria-hidden="true"
                     height="16"
@@ -104,7 +140,7 @@ const Header = () => {
                 </button>
               </div>
               <div className="mx-1 flex text-sm">
-                <button className="rounded-lg border-[1px] border-gray-200 px-2 py-2 hover:bg-[#ebeef1]">
+                <button className="rounded-lg border-[1px] border-gray-200 px-4 py-[5px] hover:bg-[#ebeef1]">
                   <svg
                     aria-hidden="true"
                     height="16"
@@ -120,7 +156,7 @@ const Header = () => {
                 </button>
               </div>
               <div className="mx-1 flex text-sm">
-                <button className="rounded-lg border-[1px] border-gray-200 px-2 py-2 hover:bg-[#ebeef1]">
+                <button className="rounded-lg border-[1px] border-gray-200 px-4 py-[5px] hover:bg-[#ebeef1]">
                   <svg
                     aria-hidden="true"
                     height="16"
@@ -135,7 +171,7 @@ const Header = () => {
                 </button>
               </div>
               <div className="mx-1 flex text-sm">
-                <button className="rounded-lg border-[1px] border-gray-200 px-2 py-2 hover:bg-[#ebeef1]">
+                <button className="rounded-lg border-[1px] border-gray-200 px-4 py-[5px] hover:bg-[#ebeef1]">
                   <svg
                     aria-hidden="true"
                     height="16"
@@ -148,16 +184,11 @@ const Header = () => {
                     <path d="M2.8 2.06A1.75 1.75 0 0 1 4.41 1h7.18c.7 0 1.333.417 1.61 1.06l2.74 6.395c.04.093.06.194.06.295v4.5A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25v-4.5c0-.101.02-.202.06-.295Zm1.61.44a.25.25 0 0 0-.23.152L1.887 8H4.75a.75.75 0 0 1 .6.3L6.625 10h2.75l1.275-1.7a.75.75 0 0 1 .6-.3h2.863L11.82 2.652a.25.25 0 0 0-.23-.152Zm10.09 7h-2.875l-1.275 1.7a.75.75 0 0 1-.6.3h-3.5a.75.75 0 0 1-.6-.3L4.375 9.5H1.5v3.75c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25Z"></path>
                   </svg>
                 </button>
-              </div>
+              </div> */}
               <div className="mx-1 flex text-sm">
-                <img
-                  src="https://avatars.githubusercontent.com/u/36417693?v=4"
-                  alt=""
-                  size="32"
-                  height="32"
-                  width="32"
-                  data-view-component="true"
-                  className="avatar circle size-8 h-8 rounded-full"
+                <Avatar
+                  avatar_url={AVATARURL}
+                  classes={"size-8 h-8 rounded-full"}
                 />
               </div>
             </div>

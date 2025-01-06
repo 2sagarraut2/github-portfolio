@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Octokit } from "@octokit/core";
 import Loader from "./Loader";
+import Avatar from "./Avatar";
 
 const Sidebar = () => {
   const [userData, setUserData] = useState({
@@ -53,13 +54,19 @@ const Sidebar = () => {
         <div>
           <div className="p-[1px]">
             <span>
-              <span>
+              {/* <span>
                 <img
                   alt="avatar"
                   src={userData.avatar_url}
                   className="align-middle rounded-[50%] w-full border-[1px] border-solid border-[#d1d9e0] bg-[#ffffff]"
                 />
-              </span>
+              </span> */}
+              <Avatar
+                avatar_url={userData.avatar_url}
+                classes={
+                  "align-middle rounded-[50%] w-full border-[1px] border-solid border-[#d1d9e0] bg-[#ffffff]"
+                }
+              />
             </span>
           </div>
           <div className="top-0 float-left w-[100%] py-3 sticky">

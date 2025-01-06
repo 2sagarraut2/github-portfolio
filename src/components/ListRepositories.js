@@ -2,6 +2,8 @@ import { Octokit } from "@octokit/core";
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
 import { REPOSITORYBUTTONS } from "../utils/constants";
+import CommonButton from "./CommonButton";
+import RepoCard from "./RepoCard";
 
 const ListRepositories = () => {
   // eslint-disable-next-line
@@ -83,65 +85,41 @@ const ListRepositories = () => {
   return (
     <div className="">
       {/* bg-gray-100 up */}
-      <div className="mt-4 bg-white ">
-        <div className="flex flex-justify-between gap-2 text-sm border-b-[1px] border-gray-200 pb-4">
+      <div className="my-4 bg-white ">
+        <div className="flex flex-justify-between gap-2 flex-wrap text-sm border-b-[1px] border-gray-200 pb-4">
           <input
             name="seach-repository "
-            placeholder="Find a reository..."
+            placeholder="Find a repository..."
             className="px-2 flex-1 border-[1px] border-gray-200 rounded-lg"
           />
           {REPOSITORYBUTTONS.map((button) => {
             return (
-              <button
+              <CommonButton
                 key={button.id}
-                className="rounded-lg border-[1px] border-gray-200 px-4 py-[5px] inline-flex items-center bg-[#f6f8fa] hover:bg-[#ebeef1]"
-              >
-                {button.label}
-                {button.element}
-              </button>
+                element={button.element}
+                id={button.id}
+                label={button.label}
+              />
             );
           })}
         </div>
         <div>
           {loading && <Loader />}
           {filteredRepoData.map((repo) => {
-            // console.log(repo);
             const visibility = capitalizeFirstLetter(repo.visibility);
             const updatedAt = convertToRelativeTime(repo.updated_at);
             return (
-              <ul key={repo.id} className="border-b-[1px] border-gray-200 pb-4">
-                <li className="flex w-full justify-between py-6">
-                  <div className="inline-block">
-                    <div className="inline-block mb-1">
-                      <h3 className="break-all">
-                        <a
-                          href={repo.html_url}
-                          rel="noreferrer"
-                          className="text-[#0969da] bg-transparent text-xl font-semibold hover:border-b-[2px] border-[#0969da]"
-                        >
-                          {repo.name}
-                        </a>
-                        <span className="border-[#d1d9e0] text-[#59636e] border rounded-full inline-block text-xs font-[500] leading-4 px-1 whitespace-nowrap ml-4 mb-1 text-center">
-                          {visibility}
-                        </span>
-                      </h3>
-                    </div>
-                    <div>
-                      <p className="text-[#59636e] text-sm">
-                        {repo.description}
-                      </p>
-                    </div>
-                    <div className="text-xs mt-2">
-                      <span className="text-xs">{repo.language}</span> Updated{" "}
-                      {updatedAt}
-                    </div>
-                  </div>
-                  <div>
-                    {/* <div>{repo.stargazers_url}</div> */}
-                    <div></div>
-                  </div>
-                </li>
-              </ul>
+              <div key={repo.id}>
+                <RepoCard
+                  id={repo.id}
+                  html_url={repo.html_url}
+                  name={repo.name}
+                  visibility={visibility}
+                  description={repo.description}
+                  language={repo.language}
+                  updatedAt={updatedAt}
+                />
+              </div>
             );
           })}
         </div>

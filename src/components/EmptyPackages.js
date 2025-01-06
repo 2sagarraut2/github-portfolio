@@ -1,11 +1,8 @@
 const EmptyPackages = () => {
   return (
-    <div className="">
-      {/* bg-gray-100 up */}
-      <div className="mt-4 bg-white ">
-        <div className="flex flex-justify-between gap-2 text-sm border-b-[1px] border-gray-200 pb-4">
-          Packages
-        </div>
+    <div className="mt-4 bg-white border border-gray-200 rounded-lg">
+      <div className="m-6 pb-2 text-2xl font-semibold text-gray-800 border-b-[#d1d9e0] border-b-solid border-b-[1px]">
+        Packages
       </div>
     </div>
   );
