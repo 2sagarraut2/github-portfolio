@@ -36,12 +36,13 @@ const ListRepositories = () => {
 
       //   filtering data by latest updated_at and sting in setFilteredRepoData
       const filteredData = response.data.sort((a, b) => {
-        return new Date(b.updated_at) - new Date(a.updated_at);
+        return new Date(b.pushed_at) - new Date(a.pushed_at);
       });
       //   console.log(filteredData);
 
       //   setting filtered data
       setFilteredRepoData(filteredData);
+      console.log(response.data, response.data);
       setloading(false);
 
       return response.data; // Return data if needed
@@ -107,7 +108,7 @@ const ListRepositories = () => {
           {loading && <Loader />}
           {filteredRepoData.map((repo) => {
             const visibility = capitalizeFirstLetter(repo.visibility);
-            const updatedAt = convertToRelativeTime(repo.updated_at);
+            const updatedAt = convertToRelativeTime(repo.pushed_at);
             return (
               <div key={repo.id}>
                 <RepoCard

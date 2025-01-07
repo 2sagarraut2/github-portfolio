@@ -36,6 +36,7 @@ const Sidebar = () => {
       });
       //   console.log("User Data:", response);
       setUserData(response.data);
+      document.title = response.data.login + " (" + response.data.name + ")";
       setloading(false);
     } catch (error) {
       console.error("Error fetching repositories:", error);

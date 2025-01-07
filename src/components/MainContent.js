@@ -9,6 +9,7 @@ import {
 } from "../utils/constants";
 
 const MainContent = () => {
+  // eslint-disable-next-line
   const [contributions, setContributions] = useState([]);
 
   const token = process.env.REACT_APP_AUTH_TOKEN;
@@ -51,7 +52,7 @@ const MainContent = () => {
       headers: headers,
     });
     const data = await response.json();
-    console.log("Contributions Data: ", data);
+    // console.log("Contributions Data: ", data);
     setContributions(data);
     return data;
   }

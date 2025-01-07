@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import ProfileMenus from "./components/ProfileMenus";
 import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
+import Footer from "./components/Footer";
 
 function App() {
   const location = useLocation();
@@ -38,6 +39,7 @@ function App() {
           <Outlet />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
