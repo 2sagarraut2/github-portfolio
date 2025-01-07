@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Octokit } from "@octokit/core";
 import Loader from "./Loader";
 import Avatar from "./Avatar";
+// import ScrollDownButton from "./ScrollDownButton";
 
 const Sidebar = () => {
   const [userData, setUserData] = useState({
@@ -52,8 +53,8 @@ const Sidebar = () => {
       {loading && <Loader />}
       {/* bg-gray-200 up */}
       <div className="mt-4">
-        <div>
-          <div className="p-[1px]">
+        <div className="flex justify-between items-center sm:block">
+          <div className="pr-4 pb-2 w-36 md:w-full">
             <span>
               {/* <span>
                 <img
@@ -65,7 +66,7 @@ const Sidebar = () => {
               <Avatar
                 avatar_url={userData.avatar_url}
                 classes={
-                  "align-middle rounded-[50%] w-full border-[1px] border-solid border-[#d1d9e0] bg-[#ffffff]"
+                  "align-middle rounded-[50%] border-[1px] border-solid border-[#d1d9e0] bg-[#ffffff] w-full"
                 }
               />
             </span>
@@ -166,7 +167,7 @@ const Sidebar = () => {
           </li>
         </ul>
       </div>
-      <div className="border-top color-border-muted pt-3 mt-3 d-none d-md-block">
+      {/* <div className="border-top color-border-muted pt-3 mt-3 d-none d-md-block">
         <h2 className="h4 mb-2">
           <div>Achievements</div>
         </h2>
@@ -205,7 +206,9 @@ const Sidebar = () => {
             />
           </span>
         </div>
-      </div>
+      </div> */}
+      {/* Scrollbar button */}
+      {/* <ScrollDownButton /> */}
     </div>
   );
 };

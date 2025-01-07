@@ -7,7 +7,7 @@ const HeaderMenus = ({ MENU }) => {
   const { pathname } = useLocation();
 
   return (
-    <ul className="flex ">
+    <ul className="flex flex-wrap">
       <Link key={id} to={path}>
         <li
           key={id}
