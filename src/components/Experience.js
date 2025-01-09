@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { WORKEXPERIENCES } from "../utils/constants";
+import TitleComponent from "./TitleComponent";
 
 const Stepper = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -50,10 +51,8 @@ const Stepper = () => {
   // }
 
   return (
-    <div className="my-4 bg-white border border-gray-200 rounded-lg">
-      <div className="m-6 pb-2 text-2xl font-semibold text-gray-800 border-b-[#d1d9e0] border-b-solid border-b-[1px]">
-        Work Experience
-      </div>
+    <div className="my-4 bg-white border border-gray-200 rounded-lg p-6">
+      <TitleComponent title="Work Experience" />
 
       <div className="relative md:left-8 top-2">
         {WORKEXPERIENCES.map((exp) => {
@@ -83,9 +82,9 @@ const Stepper = () => {
               )}
 
               {/* Experience Details */}
-              <div className="ml-12">
+              <div className="ml-12 truncate">
                 <p className="font-semibold">{exp.role}</p>
-                <p className="text-sm text-gray-600">{exp.company}</p>
+                <p className="text-sm text-gray-600 truncate">{exp.company}</p>
                 <p className="text-sm text-gray-500">{exp.location}</p>
                 <p className="text-xs text-gray-400">
                   {exp.duration}

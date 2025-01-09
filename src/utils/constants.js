@@ -267,37 +267,6 @@ export const haveALook = "Have a look at my ";
 export const skills = ", skills or just connect with me on ";
 export const excited = "I am always excited to enhance my knowledge.";
 
-export const PROJECTS = [
-  {
-    id: 1,
-    title: "Loan Management System",
-    description:
-      "The Loan Management System is a comprehensive web application designed to streamline and manage the end-to-end lifecycle of loan processing. This system provides a user-friendly interface and robust backend to handle all critical functionalities related to loans, from initiation to closure. It ensures seamless integration with payment systems.",
-    link: "https://github.com/2sagarraut2/loan-management-system",
-  },
-  {
-    id: 2,
-    title: "Swiggy WebApp clone",
-    description:
-      "The Swiggy Web-App Clone is a feature-rich, responsive web application built to emulate the core functionalities and user experience of the Swiggy food delivery platform. This project demonstrates expertise in building scalable, user-friendly interfaces, seamless API integration, and real-time data handling, ensuring an interactive and intuitive user experience.",
-    link: "https://github.com/2sagarraut2/deliveryapp",
-  },
-  {
-    id: 3,
-    title: "Github Portfolio",
-    description:
-      "The GitHub Portfolio Web-App Clone is a sleek and professional portfolio web application inspired by GitHub's repository user interface. This project combines functionality with aesthetics, providing a clean, intuitive design for showcasing projects, skills, and achievements in a format that resonates with developers and recruiters.",
-    link: "https://github.com/2sagarraut2/github-portfolio",
-  },
-  {
-    id: 4,
-    title: "Shopping Cart",
-    description:
-      "The Shopping Cart Project is a modular and reusable feature designed to replicate the 'Add to Cart' functionality commonly found in e-commerce websites. Built using Redux, this project provides a robust solution for managing cart operations efficiently and can be easily integrated into any web application.",
-    link: "https://github.com/2sagarraut2/shopping-cart",
-  },
-];
-
 export const REPOSITORYBUTTONS = [
   {
     id: 1,
@@ -310,7 +279,7 @@ export const REPOSITORYBUTTONS = [
         viewBox="0 0 16 16"
         width="16"
         height="16"
-        fill="currentColor"
+        data-slot="icon"
         style={{
           display: "inline-block",
           userSelect: "none",
@@ -321,6 +290,23 @@ export const REPOSITORYBUTTONS = [
         <path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"></path>
       </svg>
     ),
+    menus: [
+      {
+        id: 1,
+        label: "All",
+        action: "sortAllNames",
+      },
+      {
+        id: 2,
+        label: "Public",
+        action: "sortByPublic",
+      },
+      {
+        id: 3,
+        label: "Private",
+        action: "sortByPrivate",
+      },
+    ],
   },
   {
     id: 2,
@@ -344,6 +330,28 @@ export const REPOSITORYBUTTONS = [
         <path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"></path>
       </svg>
     ),
+    menus: [
+      {
+        id: 1,
+        label: "All",
+        action: "sortByAllLanguage",
+      },
+      {
+        id: 2,
+        label: "JavaScript",
+        action: "sortByJavaScript",
+      },
+      {
+        id: 3,
+        label: "Java",
+        action: "sortByJava",
+      },
+      {
+        id: 4,
+        label: "HTML",
+        action: "sortByHTML",
+      },
+    ],
   },
   {
     id: 3,
@@ -367,25 +375,22 @@ export const REPOSITORYBUTTONS = [
         <path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"></path>
       </svg>
     ),
+    menus: [
+      {
+        id: 1,
+        label: "Last Updated",
+        action: "sortByLastUpdated",
+      },
+      {
+        id: 2,
+        label: "Name",
+        action: "sortByName",
+      },
+    ],
   },
-  // {
-  //   id: 4,
-  //   label: "New",
-  //   element: (
-  //     <svg
-  //       aria-hidden="true"
-  //       height="16"
-  //       viewBox="0 0 16 16"
-  //       version="1.1"
-  //       width="16"
-  //       data-view-component="true"
-  //       className="octicon octicon-repo ml-[2px]"
-  //     >
-  //       <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path>
-  //     </svg>
-  //   ),
-  // },
 ];
+
+export const RESULTLABEL = " result for repositories matching with ";
 
 export const WORKEXPERIENCES = [
   {
@@ -838,5 +843,36 @@ export const HEADERBUTTONELEMENTS = [
         <path d="M2.8 2.06A1.75 1.75 0 0 1 4.41 1h7.18c.7 0 1.333.417 1.61 1.06l2.74 6.395c.04.093.06.194.06.295v4.5A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25v-4.5c0-.101.02-.202.06-.295Zm1.61.44a.25.25 0 0 0-.23.152L1.887 8H4.75a.75.75 0 0 1 .6.3L6.625 10h2.75l1.275-1.7a.75.75 0 0 1 .6-.3h2.863L11.82 2.652a.25.25 0 0 0-.23-.152Zm10.09 7h-2.875l-1.275 1.7a.75.75 0 0 1-.6.3h-3.5a.75.75 0 0 1-.6-.3L4.375 9.5H1.5v3.75c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25Z"></path>
       </svg>
     ),
+  },
+];
+
+export const MYPROJECTS = [
+  {
+    id: 1,
+    name: "Loan Management System",
+    html_url: "https://lms.4fin.in/login",
+    description:
+      "The Loan Management System is a comprehensive web application designed to streamline and manage the end-to-end lifecycle of loan processing. This system provides a user-friendly interface and robust backend to handle all critical functionalities related to loans, from initiation to closure. It ensures seamless integration with payment systems.",
+  },
+  {
+    id: 2,
+    name: "Swiggy WebApp clone",
+    html_url: "https://github.com/2sagarraut2/deliveryapp",
+    description:
+      "The Swiggy Web-App Clone is a feature-rich, responsive web application built to emulate the core functionalities and user experience of the Swiggy food delivery platform. This project demonstrates expertise in building scalable, user-friendly interfaces, seamless API integration, and real-time data handling, ensuring an interactive and intuitive user experience.",
+  },
+  {
+    id: 3,
+    name: "Github Portfolio",
+    description:
+      "The GitHub Portfolio Web-App Clone is a sleek and professional portfolio web application inspired by GitHub's repository user interface. This project combines functionality with aesthetics, providing a clean, intuitive design for showcasing projects, skills, and achievements in a format that resonates with developers and recruiters.",
+    html_url: "https://github.com/2sagarraut2/github-portfolio",
+  },
+  {
+    id: 4,
+    name: "Shopping Cart",
+    description:
+      "The Shopping Cart Project is a modular and reusable feature designed to replicate the 'Add to Cart' functionality commonly found in e-commerce websites. Built using Redux, this project provides a robust solution for managing cart operations efficiently and can be easily integrated into any web application.",
+    html_url: "https://github.com/2sagarraut2/shopping-cart",
   },
 ];

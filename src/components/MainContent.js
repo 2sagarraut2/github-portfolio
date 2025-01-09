@@ -7,6 +7,8 @@ import {
   TECHSTACKLABEL,
   WELCOME,
 } from "../utils/constants";
+import TitleComponent from "./TitleComponent";
+import TitleComponentHOC from "./TitleComponentHOC";
 
 const MainContent = () => {
   // eslint-disable-next-line
@@ -57,19 +59,16 @@ const MainContent = () => {
     return data;
   }
 
+  const EnhancedTitleComponent = TitleComponentHOC(TitleComponent);
+
   return (
     // second column
     <div className="">
       {/* bg-gray-100 up */}
       <div className="my-4 bg-white border-[#d1d9e0] rounded-md border-solid border-[1px]">
         <div className="flex-justify-between p-6">
-          <div className="font-mono text-xs mb-5">
-            <span className="color-fg-muted d-inline-block">{SAGARRAUT}</span>
-          </div>
-          <div>
-            <h3 className="font-semibold text-3xl pb-2 mb-2 border-b-[#d1d9e0] border-b-solid border-b-[1px]">
-              {WELCOME}
-            </h3>
+          <EnhancedTitleComponent text={SAGARRAUT} title={WELCOME} />
+          <div className="py-2">
             <p dangerouslySetInnerHTML={{ __html: INTRO }} />
           </div>
           <div>

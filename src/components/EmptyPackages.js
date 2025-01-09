@@ -1,8 +1,22 @@
+import { MYPROJECTS } from "../utils/constants";
+import RepoCard from "./RepoCard";
+import TitleComponent from "./TitleComponent";
+
 const EmptyPackages = () => {
   return (
-    <div className="mt-4 bg-white border border-gray-200 rounded-lg">
-      <div className="m-6 pb-2 text-2xl font-semibold text-gray-800 border-b-[#d1d9e0] border-b-solid border-b-[1px]">
-        Projects
+    <div className="mt-4 p-6 bg-white border border-gray-200 rounded-lg">
+      <TitleComponent title="Projects" />
+      <div>
+        {MYPROJECTS.map((project) => {
+          return (
+            <RepoCard
+              id={project.id}
+              html_url={project.html_url}
+              name={project.name}
+              description={project.description}
+            />
+          );
+        })}
       </div>
     </div>
   );

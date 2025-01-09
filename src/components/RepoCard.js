@@ -15,14 +15,17 @@ const RepoCard = ({
             <h3 className="break-all">
               <a
                 href={html_url}
+                target="_blank"
                 rel="noreferrer"
                 className="text-[#0969da] bg-transparent text-xl font-semibold hover:border-b-[2px] border-[#0969da]"
               >
                 {name}
               </a>
-              <span className="border-[#d1d9e0] text-[#59636e] border rounded-full inline-block text-xs font-[500] leading-4 px-1 whitespace-nowrap ml-4 mb-1 text-center">
-                {visibility}
-              </span>
+              {visibility && (
+                <span className="border-[#d1d9e0] text-[#59636e] border rounded-full inline-block text-xs font-[500] leading-4 px-1 whitespace-nowrap ml-4 mb-1 text-center">
+                  {visibility}
+                </span>
+              )}
             </h3>
           </div>
           <div>
@@ -35,7 +38,7 @@ const RepoCard = ({
                 <span className="text-xs mr-4">{language}</span>
               </>
             )}
-            Updated {updatedAt}
+            {updatedAt && <span>Updated {updatedAt}</span>}
           </div>
         </div>
         <div>
