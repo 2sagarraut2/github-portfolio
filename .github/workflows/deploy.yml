@@ -1,0 +1,39 @@
+name: Deploy React App
+
+# Trigger the workflow when you push to the main branch
+on:
+  push:
+    branches:
+      - main # Replace with your default branch name if different
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest # Use the latest Ubuntu runner for the job
+
+    steps:
+      # Step 1: Check out the repository code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16 # Use the version of Node.js your app requires
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Build the app
+      - name: Build React app
+        run: npm run build
+        env:
+          REACT_APP_AUTH_TOKEN: ${{ secrets.REACT_APP_AUTH_TOKEN }} # Inject secret
+
+      # Step 5: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Default token provided by GitHub
+          publish_dir: ./build # Directory to deploy (React build output)
