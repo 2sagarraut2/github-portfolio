@@ -1,7 +1,7 @@
 // import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { AVATARURL } from "../utils/constants";
+import { AVATARURL, SAGARRAUT2 } from "../utils/constants";
 // import CommonButton from "./CommonButton";
 import Avatar from "./Avatar";
 
@@ -70,7 +70,7 @@ const Header = () => {
                     <Link to="/">
                       <li className="w-full text-sm rounded-lg hover:bg-[#ebeef1]">
                         <span>
-                          <button className="mx-2 ">2sagarraut2</button>
+                          <button className="mx-2 ">{SAGARRAUT2}</button>
                         </span>
                       </li>
                     </Link>

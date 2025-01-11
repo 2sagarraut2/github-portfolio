@@ -10,6 +10,7 @@ const EmptyPackages = () => {
         {MYPROJECTS.map((project) => {
           return (
             <RepoCard
+              key={project.id}
               id={project.id}
               html_url={project.html_url}
               name={project.name}

@@ -746,6 +746,7 @@ export const TECHSTACK = [
   },
 ];
 
+export const SAGARRAUT2 = "2sagarraut2";
 export const SAGARRAUT = "2sagarraut2/README.md";
 
 export const WELCOME = "💫 Welcome to My Portfolio!";
@@ -870,9 +871,20 @@ export const MYPROJECTS = [
   },
   {
     id: 4,
+    name: "Blog App",
+    description:
+      "The Blog App is a sleek, user-friendly platform for creating, managing, and exploring blogs. Built with React, it provides a seamless experience for both content creators and readers. Users can add new blog posts, view a detailed blog list, and dive into individual blogs for an immersive reading experience.",
+    html_url: "https://2sagarraut2.github.io/blog-writer/",
+  },
+  {
+    id: 5,
     name: "Shopping Cart",
     description:
       "The Shopping Cart Project is a modular and reusable feature designed to replicate the 'Add to Cart' functionality commonly found in e-commerce websites. Built using Redux, this project provides a robust solution for managing cart operations efficiently and can be easily integrated into any web application.",
     html_url: "https://github.com/2sagarraut2/shopping-cart",
   },
 ];
+
+export const CLEARFILTER = "Clear filter";
+
+export const FOOTERTEXT = "No © 2025 copyright issues.";
