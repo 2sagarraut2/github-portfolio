@@ -10,34 +10,39 @@ import Experience from "./components/Experience";
 import EmptyStars from "./components/EmptyStars";
 import EmptyPackages from "./components/EmptyPackages";
 
-const appRouter = createBrowserRouter([
+const appRouter = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+      children: [
+        {
+          path: "/",
+          element: <Profile />, // Default route for the overview page
+        },
+        {
+          path: "/repositories",
+          element: <ListRepositories />,
+        },
+        {
+          path: "/experiences",
+          element: <Experience />,
+        },
+        {
+          path: "/packages",
+          element: <EmptyPackages />,
+        },
+        {
+          path: "/stars",
+          element: <EmptyStars />,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <App />,
-    children: [
-      {
-        path: "/",
-        element: <Profile />, // Default route for the overview page
-      },
-      {
-        path: "/repositories",
-        element: <ListRepositories />,
-      },
-      {
-        path: "/experiences",
-        element: <Experience />,
-      },
-      {
-        path: "/packages",
-        element: <EmptyPackages />,
-      },
-      {
-        path: "/stars",
-        element: <EmptyStars />,
-      },
-    ],
-  },
-]);
+    basename: "/github-portfolio", // Add basename for GitHub Pages
+  }
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
