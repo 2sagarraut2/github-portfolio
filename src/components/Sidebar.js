@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
-import { Octokit } from "@octokit/core";
-import Loader from "./Loader";
+import { useState } from "react";
+// import { Octokit } from "@octokit/core";
+// import Loader from "./Loader";
 import Avatar from "./Avatar";
 // import ScrollDownButton from "./ScrollDownButton";
 
 const Sidebar = () => {
+  // eslint-disable-next-line
   const [userData, setUserData] = useState({
     avatar_url: "https://avatars.githubusercontent.com/u/36417693?v=4",
     bio: "Eat, Sleep, Code, Repeat....",
@@ -16,41 +17,40 @@ const Sidebar = () => {
     name: "Sagar Raut",
     blog: "https://2sagarraut2.github.io/portfolio/",
   });
+  // eslint-disable-next-line
   const [loading, setloading] = useState(true);
 
-  const token = process.env.REACT_APP_AUTH_TOKEN;
-  const octokit = new Octokit({
-    auth: token, // Replace with your GitHub token
-  });
+  // const token = process.env.REACT_APP_AUTH_TOKEN;
+  // const octokit = new Octokit({
+  //   auth: token, // Replace with your GitHub token
+  // });
 
-  useEffect(() => {
-    fetchUserData();
-    // eslint-disable-next-line
-  }, []);
+  // useEffect(() => {
+  //   fetchUserData();
+  //   // eslint-disable-next-line
+  // }, []);
 
-  async function fetchUserData() {
-    try {
-      const response = await octokit.request("GET /user", {
-        headers: {
-          "X-GitHub-Api-Version": "2022-11-28",
-        },
-      });
-      //   console.log("User Data:", response);
-      setUserData(response.data);
-      document.title = response.data.login + " (" + response.data.name + ")";
-      setloading(false);
-    } catch (error) {
-      console.error("Error fetching repositories:", error);
-      setloading(false);
-    }
-  }
-
-  //   console.log("User Data:", userData);
+  // async function fetchUserData() {
+  //   try {
+  //     const response = await octokit.request("GET /user", {
+  //       headers: {
+  //         "X-GitHub-Api-Version": "2022-11-28",
+  //       },
+  //     });
+  //     //   console.log("User Data:", response);
+  //     setUserData(response.data);
+  //     document.title = response.data.login + " (" + response.data.name + ")";
+  //     setloading(false);
+  //   } catch (error) {
+  //     console.error("Error fetching repositories:", error);
+  //     setloading(false);
+  //   }
+  // }
 
   return (
     // first column
     <div className="">
-      {loading && <Loader />}
+      {/* {loading && <Loader />} */}
       {/* bg-gray-200 up */}
       <div className="mt-4">
         <div className="flex justify-between items-center sm:block">

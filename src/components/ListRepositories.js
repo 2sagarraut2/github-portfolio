@@ -1,4 +1,4 @@
-import { Octokit } from "@octokit/core";
+// import { Octokit } from "@octokit/core";
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
 import {
@@ -8,6 +8,7 @@ import {
 } from "../utils/constants";
 import CommonButton from "./CommonButton";
 import RepoCard from "./RepoCard";
+import { REPODATA } from "../utils/RepoData";
 
 const ListRepositories = () => {
   // eslint-disable-next-line
@@ -17,46 +18,50 @@ const ListRepositories = () => {
   const [searchText, setSearchText] = useState("");
   const [selectedItem, setSelectedItem] = useState("");
 
-  const token = process.env.REACT_APP_AUTH_TOKEN;
-  const octokit = new Octokit({
-    auth: token, // Replace with your GitHub token
-  });
+  // const token = process.env.REACT_APP_AUTH_TOKEN;
+  // const octokit = new Octokit({
+  //   auth: token, // Replace with your GitHub token
+  // });
 
   useEffect(() => {
-    fetchPersonalRepos();
+    // fetchPersonalRepos();
     // eslint-disable-next-line
+
+    setRepoData(REPODATA);
+    setFilteredRepoData(REPODATA);
+    setloading(false);
   }, []);
 
-  async function fetchPersonalRepos() {
-    try {
-      // Fetch your repositories
-      const response = await octokit.request("GET /user/repos", {
-        headers: {
-          "X-GitHub-Api-Version": "2022-11-28",
-        },
-      });
+  // async function fetchPersonalRepos() {
+  //   try {
+  //     // Fetch your repositories
+  //     const response = await octokit.request("GET /user/repos", {
+  //       headers: {
+  //         "X-GitHub-Api-Version": "2022-11-28",
+  //       },
+  //     });
 
-      // Log repository data
-      //   console.log(response);
-      setRepoData(response.data);
+  //     // Log repository data
+  //     console.log(response);
+  //     setRepoData(response.data);
 
-      //   filtering data by latest updated_at and sting in setFilteredRepoData
-      const filteredData = response.data.sort((a, b) => {
-        return new Date(b.pushed_at) - new Date(a.pushed_at);
-      });
-      //   console.log(filteredData);
+  //     //   filtering data by latest updated_at and sting in setFilteredRepoData
+  //     const filteredData = response.data.sort((a, b) => {
+  //       return new Date(b.pushed_at) - new Date(a.pushed_at);
+  //     });
+  //     //   console.log(filteredData);
 
-      //   setting filtered data
-      setFilteredRepoData(filteredData);
-      //   console.log(response.data, response.data);
-      setloading(false);
+  //     //   setting filtered data
+  //     setFilteredRepoData(filteredData);
+  //     //   console.log(response.data, response.data);
+  //     setloading(false);
 
-      return response.data; // Return data if needed
-    } catch (error) {
-      console.error("Error fetching repositories:", error);
-      setloading(false);
-    }
-  }
+  //     return response.data; // Return data if needed
+  //   } catch (error) {
+  //     console.error("Error fetching repositories:", error);
+  //     setloading(false);
+  //   }
+  // }
 
   function convertToRelativeTime(isoString) {
     const date = new Date(isoString);
