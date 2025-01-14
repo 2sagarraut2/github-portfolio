@@ -55,7 +55,7 @@ const Stepper = () => {
 
   return (
     <div
-      className={`my-4 bg-white border border-gray-200 rounded-lg p-6 ${
+      className={`my-4 border border-gray-200 rounded-lg p-6 ${
         theme === "dark" ? "text-[#59636e] bg-black" : "text-black bg-white"
       }`}
     >
