@@ -22,19 +22,19 @@ const appRouter = createBrowserRouter(
           element: <Profile />, // Default route for the overview page
         },
         {
-          path: "/repositories",
+          path: "/github-portfolio/repositories",
           element: <ListRepositories />,
         },
         {
-          path: "/experiences",
+          path: "/github-portfolio/experiences",
           element: <Experience />,
         },
         {
-          path: "/projects",
+          path: "/github-portfolio/projects",
           element: <EmptyPackages />,
         },
         {
-          path: "/stars",
+          path: "/github-portfolio/stars",
           element: <EmptyStars />,
         },
       ],
