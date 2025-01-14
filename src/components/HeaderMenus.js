@@ -4,7 +4,7 @@ import { useTheme } from "./ThemeContext";
 const HeaderMenus = ({ MENU }) => {
   const { id, label, element, path } = MENU;
   const { pathname } = useLocation();
-
+  console.log(pathname);
   const { theme } = useTheme();
 
   return (

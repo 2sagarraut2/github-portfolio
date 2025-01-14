@@ -43,7 +43,14 @@ const RepoCard = ({
             </h3>
           </div>
           <div>
-            <p className="text-[#59636e] text-sm">{description}</p>
+            <p
+              // className="text-[#59636e] text-sm"
+              className={`text-[#59636e] text-sm ${
+                theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+              }`}
+            >
+              {description}
+            </p>
           </div>
           <div className="text-xs mt-2 flex items-start">
             {language && (

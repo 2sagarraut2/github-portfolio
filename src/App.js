@@ -14,9 +14,9 @@ function App() {
   // Determine if Sidebar should be displayed (e.g., for overview and repositories)
   const showSidebar =
     location.pathname === "/" ||
-    location.pathname === "/github-portfolio/repositories" ||
-    location.pathname === "/github-portfolio/experiences" ||
-    location.pathname === "/github-portfolio/projects" ||
+    location.pathname === "/repositories" ||
+    location.pathname === "/experiences" ||
+    location.pathname === "/projects" ||
     location.pathname === "/github-portfolio/stars";
 
   return (
