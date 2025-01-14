@@ -7,7 +7,7 @@ const EmptyPackages = () => {
   const { theme } = useTheme();
   return (
     <div
-      className={`mt-4 p-6 bg-white border border-gray-200 rounded-lg ${
+      className={`mt-4 p-6 border border-gray-200 rounded-lg ${
         theme === "dark" ? "text-white bg-black" : "text-black bg-white"
       }`}
     >
