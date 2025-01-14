@@ -16,7 +16,7 @@ function App() {
     location.pathname === "/" ||
     location.pathname === "/repositories" ||
     location.pathname === "/experiences" ||
-    location.pathname === "/packages" ||
+    location.pathname === "/projects" ||
     location.pathname === "/stars";
 
   return (

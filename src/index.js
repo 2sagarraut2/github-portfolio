@@ -30,7 +30,7 @@ const appRouter = createBrowserRouter(
           element: <Experience />,
         },
         {
-          path: "/packages",
+          path: "/projects",
           element: <EmptyPackages />,
         },
         {
