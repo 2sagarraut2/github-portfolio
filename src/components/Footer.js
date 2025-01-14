@@ -1,8 +1,14 @@
 import { FOOTERTEXT } from "../utils/constants";
+import { useTheme } from "./ThemeContext";
 
 const Footer = () => {
+  const { theme } = useTheme();
   return (
-    <div className="flex items-center justify-center text-sm m-4 p-4 text-[#59636e]">
+    <div
+      className={`flex items-center justify-center text-sm p-4 ${
+        theme === "dark" ? "text-white bg-black" : "text-black bg-white"
+      }`}
+    >
       {FOOTERTEXT}
     </div>
   );

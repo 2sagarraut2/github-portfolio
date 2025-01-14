@@ -3,6 +3,7 @@ import { useState } from "react";
 // import Loader from "./Loader";
 import Avatar from "./Avatar";
 // import ScrollDownButton from "./ScrollDownButton";
+import { useTheme } from "./ThemeContext";
 
 const Sidebar = () => {
   // eslint-disable-next-line
@@ -19,6 +20,8 @@ const Sidebar = () => {
   });
   // eslint-disable-next-line
   const [loading, setloading] = useState(true);
+
+  const { theme } = useTheme();
 
   // const token = process.env.REACT_APP_AUTH_TOKEN;
   // const octokit = new Octokit({
@@ -49,10 +52,12 @@ const Sidebar = () => {
 
   return (
     // first column
-    <div className="">
-      {/* {loading && <Loader />} */}
-      {/* bg-gray-200 up */}
-      <div className="mt-4">
+    <div>
+      <div
+        className={`mt-4 ${
+          theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+        } my-2`}
+      >
         <div className="flex justify-between items-center sm:block">
           <div className="pr-4 pb-2 w-36 md:w-full">
             <span>
@@ -94,7 +99,9 @@ const Sidebar = () => {
             aria-label="Organization: NCS india"
           >
             <svg
-              className="octicon octicon-organization"
+              className={`octicon octicon-organization fill-current ${
+                theme === "dark" ? "text-white" : "text-black"
+              }`}
               viewBox="0 0 16 16"
               version="1.1"
               width="16"
@@ -114,7 +121,9 @@ const Sidebar = () => {
             aria-label="Home location: India"
           >
             <svg
-              className="octicon octicon-location"
+              className={`octicon octicon-location fill-current ${
+                theme === "dark" ? "text-white" : "text-black"
+              }`}
               viewBox="0 0 16 16"
               version="1.1"
               width="16"
@@ -132,7 +141,9 @@ const Sidebar = () => {
             className="flex items-start text-sm gap-2 pt-1 "
           >
             <svg
-              className="flex items-start text-sm gap-2 truncate"
+              className={`flex items-start text-sm gap-2 truncate fill-current ${
+                theme === "dark" ? "text-white" : "text-black"
+              }`}
               viewBox="0 0 16 16"
               version="1.1"
               width="16"
@@ -157,7 +168,9 @@ const Sidebar = () => {
               version="1.1"
               width="16"
               data-view-component="true"
-              className="octicon octicon-link"
+              className={`octicon octicon-link truncate fill-current ${
+                theme === "dark" ? "text-white" : "text-black"
+              }`}
             >
               <path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path>
             </svg>

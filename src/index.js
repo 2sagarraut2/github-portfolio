@@ -9,6 +9,7 @@ import ListRepositories from "./components/ListRepositories";
 import Experience from "./components/Experience";
 import EmptyStars from "./components/EmptyStars";
 import EmptyPackages from "./components/EmptyPackages";
+import { ThemeProvider } from "./components/ThemeContext";
 
 const appRouter = createBrowserRouter(
   [
@@ -47,7 +48,9 @@ const appRouter = createBrowserRouter(
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={appRouter} />
+    <ThemeProvider>
+      <RouterProvider router={appRouter} />
+    </ThemeProvider>
   </React.StrictMode>
 );
 

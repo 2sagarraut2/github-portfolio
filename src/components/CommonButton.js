@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useTheme } from "./ThemeContext";
 
 const CommonButton = ({
   label,
@@ -18,6 +19,8 @@ const CommonButton = ({
   setSelectedItem,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const { theme } = useTheme();
 
   const dropdownRef = useRef(null);
 
@@ -65,23 +68,40 @@ const CommonButton = ({
   };
 
   return (
-    <div ref={dropdownRef} className="relative inline-block">
+    <div
+      ref={dropdownRef}
+      className={`relative inline-block ${
+        theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+      }`}
+    >
       <button
         key={id}
         onClick={toggleDropdown}
-        className="rounded-lg border-[1px] border-gray-200 px-4 py-[5px] inline-flex items-center bg-[#f6f8fa] hover:bg-[#ebeef1]"
+        className={`rounded-lg border-[1px] border-gray-200 px-4 py-[5px] inline-flex items-center bg-[#f6f8fa] ${
+          theme === "dark"
+            ? "bg-black text-white hover:bg-slate-700"
+            : "bg-white text-black hover:bg-[#ebeef1]"
+        }`}
       >
         {label}
         {element}
       </button>
       {isOpen && (
-        <ul className="absolute mt-2 w-32 bg-white border border-gray-200 rounded-md shadow-lg">
+        <ul
+          className={`absolute mt-2 w-32  border border-gray-200 rounded-md shadow-lg ${
+            theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+          }`}
+        >
           {menus.map((menu) => (
             <li
               data-name={menu.action}
               key={menu.id}
               onClick={() => handleMenuClicked(menu.action, label)}
-              className="px-4 py-2 hover:bg-gray-100 cursor-pointer w-full flex items-start"
+              className={`px-4 py-2 hover:bg-gray-100 cursor-pointer w-full flex items-start ${
+                theme === "dark"
+                  ? "bg-black text-white hover:bg-slate-700"
+                  : "bg-white text-black"
+              }`}
             >
               {selectedItem === menu.action ? (
                 <svg

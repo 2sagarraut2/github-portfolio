@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { WORKEXPERIENCES } from "../utils/constants";
 import TitleComponent from "./TitleComponent";
+import { useTheme } from "./ThemeContext";
 
 const Stepper = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  const { theme } = useTheme();
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 700px)");
@@ -51,14 +54,25 @@ const Stepper = () => {
   // }
 
   return (
-    <div className="my-4 bg-white border border-gray-200 rounded-lg p-6">
+    <div
+      className={`my-4 bg-white border border-gray-200 rounded-lg p-6 ${
+        theme === "dark" ? "text-[#59636e] bg-black" : "text-black bg-white"
+      }`}
+    >
       <TitleComponent title="Work Experience" />
 
       <div className="relative md:left-8 top-2">
         {WORKEXPERIENCES.map((exp) => {
           // const durationOfExperience = calculateDuration(exp.duration);
           return (
-            <div key={exp.id} className="flex items-start mb-8">
+            <div
+              key={exp.id}
+              className={`flex items-start mb-8 ${
+                theme === "dark"
+                  ? "text-[#59636e] bg-none"
+                  : "text-black bg-none"
+              }`}
+            >
               {/* Step Circle */}
               {!isSmallScreen && (
                 <div
@@ -76,17 +90,60 @@ const Stepper = () => {
               {!isSmallScreen && (
                 <>
                   {exp.id < WORKEXPERIENCES.length && (
-                    <div className="w-0.5 h-full bg-gray-500 absolute left-4 top-0"></div>
+                    <div
+                      className="w-0.5 h-full bg-gray-500 absolute left-4 top-0"
+
+                      //   theme === "dark"
+                      //     ? "text-white bg-black"
+                      //     : "text-black bg-white"
+                      // }`}
+                    ></div>
                   )}
                 </>
               )}
 
               {/* Experience Details */}
-              <div className="ml-12 truncate">
-                <p className="font-semibold">{exp.role}</p>
-                <p className="text-sm text-gray-600 truncate">{exp.company}</p>
-                <p className="text-sm text-gray-500">{exp.location}</p>
-                <p className="text-xs text-gray-400">
+              <div
+                className={`ml-12 truncate ${
+                  theme === "dark"
+                    ? "text-white bg-black"
+                    : "text-black bg-white"
+                }`}
+              >
+                <p
+                  className={`font-semibold ${
+                    theme === "dark"
+                      ? "text-white bg-black"
+                      : "text-black bg-white"
+                  }`}
+                >
+                  {exp.role}
+                </p>
+                <p
+                  className={`text-sm text-gray-600 truncate ${
+                    theme === "dark"
+                      ? "text-white bg-black"
+                      : "text-black bg-white"
+                  }`}
+                >
+                  {exp.company}
+                </p>
+                <p
+                  className={`text-sm text-gray-500 ${
+                    theme === "dark"
+                      ? "text-white bg-black"
+                      : "text-black bg-white"
+                  }`}
+                >
+                  {exp.location}
+                </p>
+                <p
+                  className={`text-xs text-gray-400 ${
+                    theme === "dark"
+                      ? "text-white bg-black"
+                      : "text-black bg-white"
+                  }`}
+                >
                   {exp.duration}
                   {/* | {durationOfExperience} */}
                 </p>

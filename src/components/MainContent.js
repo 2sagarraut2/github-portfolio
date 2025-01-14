@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import {
   INTRO,
   SAGARRAUT,
@@ -9,55 +8,58 @@ import {
 } from "../utils/constants";
 import TitleComponent from "./TitleComponent";
 import TitleComponentHOC from "./TitleComponentHOC";
+import { useTheme } from "./ThemeContext";
 
 const MainContent = () => {
   // eslint-disable-next-line
-  const [contributions, setContributions] = useState([]);
+  // const [contributions, setContributions] = useState([]);
 
-  const token = process.env.REACT_APP_AUTH_TOKEN;
+  const { theme } = useTheme();
 
-  useEffect(() => {
-    getContributions(token, "2sagarraut2");
-    // eslint-disable-next-line
-  }, []);
+  // const token = process.env.REACT_APP_AUTH_TOKEN;
+
+  // useEffect(() => {
+  //   // getContributions(token, "2sagarraut2");
+  //   // eslint-disable-next-line
+  // }, []);
 
   //   Contributions api call
-  async function getContributions(token, username) {
-    const headers = {
-      Authorization: `bearer ${token}`,
-    };
-    const body = {
-      query: `query {
-                user(login: "${username}") {
-                  name
-                  contributionsCollection {
-                    contributionCalendar {
-                      colors
-                      totalContributions
-                      weeks {
-                        contributionDays {
-                          color
-                          contributionCount
-                          date
-                          weekday
-                        }
-                        firstDay
-                      }
-                    }
-                  }
-                }
-              }`,
-    };
-    const response = await fetch("https://api.github.com/graphql", {
-      method: "POST",
-      body: JSON.stringify(body),
-      headers: headers,
-    });
-    const data = await response.json();
-    // console.log("Contributions Data: ", data);
-    setContributions(data);
-    return data;
-  }
+  // async function getContributions(token, username) {
+  //   const headers = {
+  //     Authorization: `bearer ${token}`,
+  //   };
+  //   const body = {
+  //     query: `query {
+  //               user(login: "${username}") {
+  //                 name
+  //                 contributionsCollection {
+  //                   contributionCalendar {
+  //                     colors
+  //                     totalContributions
+  //                     weeks {
+  //                       contributionDays {
+  //                         color
+  //                         contributionCount
+  //                         date
+  //                         weekday
+  //                       }
+  //                       firstDay
+  //                     }
+  //                   }
+  //                 }
+  //               }
+  //             }`,
+  //   };
+  //   const response = await fetch("https://api.github.com/graphql", {
+  //     method: "POST",
+  //     body: JSON.stringify(body),
+  //     headers: headers,
+  //   });
+  //   const data = await response.json();
+  //   // console.log("Contributions Data: ", data);
+  //   setContributions(data);
+  //   return data;
+  // }
 
   const EnhancedTitleComponent = TitleComponentHOC(TitleComponent);
 
@@ -65,7 +67,11 @@ const MainContent = () => {
     // second column
     <div className="">
       {/* bg-gray-100 up */}
-      <div className="my-4 bg-white border-[#d1d9e0] rounded-md border-solid border-[1px]">
+      <div
+        className={`my-4 border-[#d1d9e0] rounded-md border-solid border-[1px] ${
+          theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+        }`}
+      >
         <div className="flex-justify-between p-6">
           <EnhancedTitleComponent text={SAGARRAUT} title={WELCOME} />
           <div className="py-2">

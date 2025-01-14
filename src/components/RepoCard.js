@@ -1,3 +1,5 @@
+import { useTheme } from "./ThemeContext";
+
 const RepoCard = ({
   id,
   html_url,
@@ -7,8 +9,14 @@ const RepoCard = ({
   language,
   updatedAt,
 }) => {
+  const { theme } = useTheme();
   return (
-    <ul key={id} className="border-b-[1px] border-gray-200 pb-4">
+    <ul
+      key={id}
+      className={`border-b-[1px] border-gray-200 pb-4 ${
+        theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+      }`}
+    >
       <li className="flex w-full justify-between py-6">
         <div className="inline-block">
           <div className="inline-block mb-1">
@@ -22,7 +30,13 @@ const RepoCard = ({
                 {name}
               </a>
               {visibility && (
-                <span className="border-[#d1d9e0] text-[#59636e] border rounded-full inline-block text-xs font-[500] leading-4 px-1 whitespace-nowrap ml-4 mb-1 text-center">
+                <span
+                  className={`border-[#d1d9e0] text-[#59636e] border rounded-full inline-block text-xs font-[500] leading-4 px-1 whitespace-nowrap ml-4 mb-1 text-center ${
+                    theme === "dark"
+                      ? "bg-black text-white"
+                      : "bg-white text-black"
+                  }`}
+                >
                   {visibility}
                 </span>
               )}

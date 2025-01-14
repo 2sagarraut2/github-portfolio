@@ -9,6 +9,7 @@ import {
 import CommonButton from "./CommonButton";
 import RepoCard from "./RepoCard";
 import { REPODATA } from "../utils/RepoData";
+import { useTheme } from "./ThemeContext";
 
 const ListRepositories = () => {
   // eslint-disable-next-line
@@ -17,6 +18,8 @@ const ListRepositories = () => {
   const [loading, setloading] = useState(true);
   const [searchText, setSearchText] = useState("");
   const [selectedItem, setSelectedItem] = useState("");
+
+  const theme = useTheme();
 
   // const token = process.env.REACT_APP_AUTH_TOKEN;
   // const octokit = new Octokit({
@@ -179,14 +182,14 @@ const ListRepositories = () => {
   };
 
   return (
-    <div className="">
+    <div className="mt-4">
       {/* bg-gray-100 up */}
-      <div className="my-4 bg-white ">
+      <div>
         <div className="flex flex-justify-between gap-2 flex-wrap text-sm border-b-[1px] border-gray-200 pb-4">
           <input
             name="seach-repository"
             placeholder="Find a repository..."
-            className="px-2 py-[1px] flex-1 border-[1px] border-gray-200 rounded-lg text-base sm:text-sm"
+            className="px-2 py-[1px] flex-1 border-[1px] border-gray-200 rounded-lg text-base sm:text-sm text-black"
             value={searchText}
             onChange={searchValueInserted}
           />
@@ -214,13 +217,25 @@ const ListRepositories = () => {
           })}
         </div>
         {searchText && (
-          <div className="flex items-center border-b-[1px] border-gray-200 justify-between">
-            <h5 className="text-sm py-3">
+          <div
+            className={`flex items-center border-b-[1px] border-gray-200 justify-between ${
+              theme === "dark" ? "bg-white text-black" : "bg-black text-white"
+            }`}
+          >
+            <h5
+              className={`text-sm py-3 ${
+                theme === "dark" ? "bg-white text-black" : "bg-black text-white"
+              }`}
+            >
               <strong>{filteredRepoData.length}</strong> {RESULTLABEL}
               <strong>{searchText}</strong>
             </h5>
             <button
-              className="text-sm flex items-center hover:bg-[#ebeef1] py-1 px-1 rounded-lg"
+              className={`text-sm flex items-center hover:bg-[#ebeef1] py-1 px-1 rounded-lg ${
+                theme === "dark"
+                  ? "bg-white text-black"
+                  : "bg-black text-white hover:bg-slate-600"
+              }`}
               onClick={handleClearButtonClick}
             >
               <svg
@@ -230,7 +245,11 @@ const ListRepositories = () => {
                 version="1.1"
                 width="16"
                 data-view-component="true"
-                className="octicon octicon-x issues-reset-query-icon mr-1 text-white bg-[#59636e] rounded-md fill-current p-[1px]"
+                className={`octicon octicon-x issues-reset-query-icon mr-1 text-white rounded-md fill-current p-[1px] ${
+                  theme === "dark"
+                    ? "bg-white text-black"
+                    : "bg-black text-white hover:bg-slate-600"
+                }`}
               >
                 <path d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l3.22 3.22a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-3.22 3.22a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06Z"></path>
               </svg>
