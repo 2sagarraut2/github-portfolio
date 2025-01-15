@@ -13,7 +13,7 @@ import ListRepositories from "./components/ListRepositories";
 function App() {
   // const location = useLocation();
 
-  const [visibleComponent, setVisibleComponent] = useState("");
+  const [visibleComponent, setVisibleComponent] = useState("Overview");
 
   const { theme } = useTheme();
 
