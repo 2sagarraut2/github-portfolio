@@ -1,10 +1,14 @@
-import { Link, useLocation } from "react-router-dom";
 import { useTheme } from "./ThemeContext";
 
-const HeaderMenus = ({ MENU }) => {
-  const { id, label, element, path } = MENU;
-  const { pathname } = useLocation();
-  console.log(pathname);
+const HeaderMenus = ({
+  MENU,
+  visibleComponent,
+  setVisibleComponent,
+  handleMenuClicked,
+}) => {
+  const { id, label, element } = MENU;
+  // const { pathname } = useLocation();
+  // console.log(pathname);
   const { theme } = useTheme();
 
   return (
@@ -13,32 +17,36 @@ const HeaderMenus = ({ MENU }) => {
         theme === "dark" ? "text-white" : "text-black"
       }`}
     >
-      <Link key={id} to={path}>
-        <li
-          key={id}
-          className={pathname === path ? "border-b-2 border-[#fd8c73]" : ""}
+      {/* <Link key={id} to={path}> */}
+      <li
+        key={id}
+        // className={pathname === path ? "border-b-2 border-[#fd8c73]" : ""}
+        className={
+          label === visibleComponent ? "border-b-2 border-[#fd8c73]" : ""
+        }
+      >
+        <button
+          id={id}
+          className={`p-2 flex items-center rounded-lg text-sm ${
+            theme === "dark" ? "hover:bg-gray-700" : "hover:bg-[#ebeef1]"
+          } my-2`}
+          onClick={() => handleMenuClicked(label)}
         >
-          <button
-            id={id}
-            className={`p-2 flex items-center rounded-lg text-sm ${
-              theme === "dark" ? "hover:bg-gray-700" : "hover:bg-[#ebeef1]"
-            } my-2`}
+          <span
+            className={`mr-2 fill-current ${
+              theme === "dark" ? "text-white" : "text-black"
+            }`}
           >
-            <span
-              className={`mr-2 fill-current ${
-                theme === "dark" ? "text-white" : "text-black"
-              }`}
-            >
-              {element}
-            </span>
-            <span
-              className={pathname === path ? "font-semibold" : "font-normal"}
-            >
-              {label}
-            </span>
-          </button>
-        </li>
-      </Link>
+            {element}
+          </span>
+          <span
+          // className={pathname === path ? "font-semibold" : "font-normal"}
+          >
+            {label}
+          </span>
+        </button>
+      </li>
+      {/* </Link> */}
     </ul>
   );
 };

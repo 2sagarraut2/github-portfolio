@@ -1,5 +1,4 @@
 import MainContent from "./MainContent";
-// import { useLocation } from "react-router-dom";
 
 const Profile = () => {
   return (
