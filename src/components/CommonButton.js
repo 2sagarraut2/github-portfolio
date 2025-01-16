@@ -97,7 +97,7 @@ const CommonButton = ({
               data-name={menu.action}
               key={menu.id}
               onClick={() => handleMenuClicked(menu.action, label)}
-              className={`px-4 py-2 hover:bg-gray-100 cursor-pointer w-full flex items-start ${
+              className={`px-4 py-2 hover:bg-gray-100 cursor-pointer w-full flex items-start rounded-md ${
                 theme === "dark"
                   ? "bg-black text-white hover:bg-slate-700"
                   : "bg-white text-black"
@@ -111,7 +111,9 @@ const CommonButton = ({
                   version="1.1"
                   width="16"
                   data-view-component="true"
-                  className="mr-2"
+                  // className="mr-2"
+                  className={`mr-2  fill-current
+                    ${theme === "dark" ? "text-white" : "text-black"}`}
                 >
                   <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
                 </svg>

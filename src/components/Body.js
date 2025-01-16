@@ -4,7 +4,7 @@ import Index from "./Index";
 import About from "./About";
 import Projects from "./Projects";
 import HeaderMenus from "./HeaderMenus";
-import { REPOMENUS } from "../utils/constants";
+import { AVATARURL, REPOMENUS } from "../utils/constants";
 
 const Body = () => {
   const [activeComponent, setActiveComponent] = useState("README");
@@ -39,7 +39,7 @@ const Body = () => {
               >
                 <li className="inline-flex">
                   <img
-                    src="https://avatars.githubusercontent.com/u/36417693?v=4"
+                    src={AVATARURL}
                     alt="avatar"
                     data-view-component="true"
                     className="size-8 h-8 rounded-full avatar circle"
@@ -383,7 +383,7 @@ const Body = () => {
                           <button className="flex py-3 px-4 bg-[#f6f8fa] items-center rounded-lg text-[#0000EE]">
                             <span className="pr-2">
                               <img
-                                src="https://avatars.githubusercontent.com/u/36417693?v=4"
+                                src={AVATARURL}
                                 alt="avatar"
                                 data-view-component="true"
                                 className="size-6 h-6 rounded-full avatar circle"
