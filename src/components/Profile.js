@@ -1,11 +1,11 @@
 import MainContent from "./MainContent";
 
-const Profile = () => {
+const Profile = ({ language }) => {
   return (
     <div>
       <div>
         {/* MainContent is displayed as the primary content for the Overview page */}
-        <MainContent />
+        <MainContent language={language} />
       </div>
     </div>
   );

@@ -1,17 +1,18 @@
 import {
-  INTRO,
+  // INTRO,
   LINKEDINTAG,
   SAGARRAUT,
-  SOCIALLABEL,
+  // SOCIALLABEL,
   TECHSTACK,
-  TECHSTACKLABEL,
-  WELCOME,
+  // TECHSTACKLABEL,
+  // WELCOME,
 } from "../utils/constants";
 import TitleComponent from "./TitleComponent";
 import TitleComponentHOC from "./TitleComponentHOC";
 import { useTheme } from "./ThemeContext";
+import lang from "../utils/LanguageConstants";
 
-const MainContent = () => {
+const MainContent = ({ language }) => {
   // eslint-disable-next-line
   // const [contributions, setContributions] = useState([]);
 
@@ -74,13 +75,16 @@ const MainContent = () => {
         }`}
       >
         <div className="flex-justify-between p-6">
-          <EnhancedTitleComponent text={SAGARRAUT} title={WELCOME} />
+          <EnhancedTitleComponent
+            text={SAGARRAUT}
+            title={lang.en.WELCOME_TEXT}
+          />
           <div className="py-2">
-            <p dangerouslySetInnerHTML={{ __html: INTRO }} />
+            <p dangerouslySetInnerHTML={{ __html: lang.en.INTRO_TEXT }} />
           </div>
           <div>
             <h4 className="font-semibold text-xl py-2 mb-2 border-b-[#d1d9e0] border-b-solid border-b-[1px]">
-              {SOCIALLABEL}
+              {lang.en.SOCIALS_TEXT}
             </h4>
             <p dir="auto">
               <a
@@ -101,7 +105,7 @@ const MainContent = () => {
               className="font-semibold text-3xl pb-2 mt-6 mb-4 border-b-[#d1d9e0] border-b-solid border-b-[1px]"
               dir="auto"
             >
-              {TECHSTACKLABEL}
+              {lang.en.TECH_STACK_LABEL}
             </h1>
             <p className="flex flex-wrap gap-2">
               {TECHSTACK.map((tech) => {

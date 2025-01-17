@@ -890,3 +890,19 @@ export const MYPROJECTS = [
 export const CLEARFILTER = "Clear filter";
 
 export const FOOTERTEXT = "No © 2025 copyright issues.";
+
+export const SUPPORTED_LANGUAGES = [
+  {
+    identifier: "en",
+    name: "English",
+  },
+
+  {
+    identifier: "hindi",
+    name: "Hindi",
+  },
+  {
+    identifier: "spanish",
+    name: "Spanish",
+  },
+];
