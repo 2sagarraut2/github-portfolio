@@ -37,6 +37,9 @@ const ListRepositories = () => {
 
   // async function fetchPersonalRepos() {
   //   try {
+  //     const octokit = new Octokit({
+  //       auth: "",
+  //     });
   //     // Fetch your repositories
   //     const response = await octokit.request("GET /user/repos", {
   //       headers: {
@@ -52,14 +55,7 @@ const ListRepositories = () => {
   //     const filteredData = response.data.sort((a, b) => {
   //       return new Date(b.pushed_at) - new Date(a.pushed_at);
   //     });
-  //     //   console.log(filteredData);
-
-  //     //   setting filtered data
-  //     setFilteredRepoData(filteredData);
-  //     //   console.log(response.data, response.data);
-  //     setloading(false);
-
-  //     return response.data; // Return data if needed
+  //     console.log("filter ", filteredData);
   //   } catch (error) {
   //     console.error("Error fetching repositories:", error);
   //     setloading(false);

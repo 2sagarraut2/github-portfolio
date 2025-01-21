@@ -1,5 +1,147 @@
 const raw_data = [
   {
+    id: 916155892,
+    node_id: "R_kgDONptt9A",
+    name: "netflix-gpt",
+    full_name: "2sagarraut2/netflix-gpt",
+    private: false,
+    owner: {
+      login: "2sagarraut2",
+      id: 36417693,
+      node_id: "MDQ6VXNlcjM2NDE3Njkz",
+      avatar_url: "https://avatars.githubusercontent.com/u/36417693?v=4",
+      gravatar_id: "",
+      url: "https://api.github.com/users/2sagarraut2",
+      html_url: "https://github.com/2sagarraut2",
+      followers_url: "https://api.github.com/users/2sagarraut2/followers",
+      following_url:
+        "https://api.github.com/users/2sagarraut2/following{/other_user}",
+      gists_url: "https://api.github.com/users/2sagarraut2/gists{/gist_id}",
+      starred_url:
+        "https://api.github.com/users/2sagarraut2/starred{/owner}{/repo}",
+      subscriptions_url:
+        "https://api.github.com/users/2sagarraut2/subscriptions",
+      organizations_url: "https://api.github.com/users/2sagarraut2/orgs",
+      repos_url: "https://api.github.com/users/2sagarraut2/repos",
+      events_url: "https://api.github.com/users/2sagarraut2/events{/privacy}",
+      received_events_url:
+        "https://api.github.com/users/2sagarraut2/received_events",
+      type: "User",
+      user_view_type: "public",
+      site_admin: false,
+    },
+    html_url: "https://github.com/2sagarraut2/netflix-gpt",
+    description: "Netflix app and movie suggestor",
+    fork: false,
+    url: "https://api.github.com/repos/2sagarraut2/netflix-gpt",
+    forks_url: "https://api.github.com/repos/2sagarraut2/netflix-gpt/forks",
+    keys_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/keys{/key_id}",
+    collaborators_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/collaborators{/collaborator}",
+    teams_url: "https://api.github.com/repos/2sagarraut2/netflix-gpt/teams",
+    hooks_url: "https://api.github.com/repos/2sagarraut2/netflix-gpt/hooks",
+    issue_events_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/issues/events{/number}",
+    events_url: "https://api.github.com/repos/2sagarraut2/netflix-gpt/events",
+    assignees_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/assignees{/user}",
+    branches_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/branches{/branch}",
+    tags_url: "https://api.github.com/repos/2sagarraut2/netflix-gpt/tags",
+    blobs_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/git/blobs{/sha}",
+    git_tags_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/git/tags{/sha}",
+    git_refs_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/git/refs{/sha}",
+    trees_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/git/trees{/sha}",
+    statuses_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/statuses/{sha}",
+    languages_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/languages",
+    stargazers_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/stargazers",
+    contributors_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/contributors",
+    subscribers_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/subscribers",
+    subscription_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/subscription",
+    commits_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/commits{/sha}",
+    git_commits_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/git/commits{/sha}",
+    comments_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/comments{/number}",
+    issue_comment_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/issues/comments{/number}",
+    contents_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/contents/{+path}",
+    compare_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/compare/{base}...{head}",
+    merges_url: "https://api.github.com/repos/2sagarraut2/netflix-gpt/merges",
+    archive_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/{archive_format}{/ref}",
+    downloads_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/downloads",
+    issues_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/issues{/number}",
+    pulls_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/pulls{/number}",
+    milestones_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/milestones{/number}",
+    notifications_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/notifications{?since,all,participating}",
+    labels_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/labels{/name}",
+    releases_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/releases{/id}",
+    deployments_url:
+      "https://api.github.com/repos/2sagarraut2/netflix-gpt/deployments",
+    created_at: "2025-01-13T15:04:02Z",
+    updated_at: "2025-01-21T11:14:03Z",
+    pushed_at: "2025-01-21T11:14:00Z",
+    git_url: "git://github.com/2sagarraut2/netflix-gpt.git",
+    ssh_url: "git@github.com:2sagarraut2/netflix-gpt.git",
+    clone_url: "https://github.com/2sagarraut2/netflix-gpt.git",
+    svn_url: "https://github.com/2sagarraut2/netflix-gpt",
+    homepage: null,
+    size: 1453,
+    stargazers_count: 0,
+    watchers_count: 0,
+    language: "JavaScript",
+    has_issues: true,
+    has_projects: true,
+    has_downloads: true,
+    has_wiki: true,
+    has_pages: false,
+    has_discussions: false,
+    forks_count: 0,
+    mirror_url: null,
+    archived: false,
+    disabled: false,
+    open_issues_count: 0,
+    license: null,
+    allow_forking: true,
+    is_template: false,
+    web_commit_signoff_required: false,
+    topics: [],
+    visibility: "public",
+    forks: 0,
+    open_issues: 0,
+    watchers: 0,
+    default_branch: "main",
+    permissions: {
+      admin: true,
+      maintain: true,
+      push: true,
+      triage: true,
+      pull: true,
+    },
+  },
+  {
     id: 910695323,
     node_id: "R_kgDONkgbmw",
     name: "github-portfolio",
@@ -106,14 +248,14 @@ const raw_data = [
     deployments_url:
       "https://api.github.com/repos/2sagarraut2/github-portfolio/deployments",
     created_at: "2025-01-01T05:15:26Z",
-    updated_at: "2025-01-11T14:32:24Z",
-    pushed_at: "2025-01-11T16:23:20Z",
+    updated_at: "2025-01-16T16:35:13Z",
+    pushed_at: "2025-01-17T13:40:43Z",
     git_url: "git://github.com/2sagarraut2/github-portfolio.git",
     ssh_url: "git@github.com:2sagarraut2/github-portfolio.git",
     clone_url: "https://github.com/2sagarraut2/github-portfolio.git",
     svn_url: "https://github.com/2sagarraut2/github-portfolio",
     homepage: null,
-    size: 2560,
+    size: 5532,
     stargazers_count: 0,
     watchers_count: 0,
     language: "JavaScript",
@@ -3037,4 +3179,5 @@ export const REPODATA = raw_data.map((repo) => ({
   description: repo.description,
   language: repo.language,
   updatedAt: repo.updated_at,
+  pushed_at: repo.pushed_at,
 }));

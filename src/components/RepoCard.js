@@ -8,6 +8,7 @@ const RepoCard = ({
   description,
   language,
   updatedAt,
+  pushedAt,
 }) => {
   const { theme } = useTheme();
   return (
