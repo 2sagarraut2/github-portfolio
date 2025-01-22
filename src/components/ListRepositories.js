@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Loader from "./Loader";
 import {
   CLEARFILTER,
+  convertToRelativeTime,
   REPOSITORYBUTTONS,
   RESULTLABEL,
 } from "../utils/constants";
@@ -61,32 +62,6 @@ const ListRepositories = () => {
   //     setloading(false);
   //   }
   // }
-
-  function convertToRelativeTime(isoString) {
-    const date = new Date(isoString);
-    const now = new Date();
-
-    const diffInSeconds = Math.floor((now - date) / 1000);
-
-    // Define time intervals in seconds
-    const intervals = {
-      year: 31536000, // 60 * 60 * 24 * 365
-      month: 2592000, // 60 * 60 * 24 * 30
-      day: 86400, // 60 * 60 * 24
-      hour: 3600, // 60 * 60
-      minute: 60,
-      second: 1,
-    };
-
-    for (const [unit, secondsInUnit] of Object.entries(intervals)) {
-      const amount = Math.floor(diffInSeconds / secondsInUnit);
-      if (amount >= 1) {
-        return `${amount} ${unit}${amount > 1 ? "s" : ""} ago`;
-      }
-    }
-
-    return "just now"; // If less than a second has passed
-  }
 
   function capitalizeFirstLetter(str) {
     if (!str) return ""; // Handle empty or undefined input

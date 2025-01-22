@@ -31,7 +31,8 @@ const raw_data = [
       site_admin: false,
     },
     html_url: "https://github.com/2sagarraut2/netflix-gpt",
-    description: "Netflix app and movie suggestor",
+    description:
+      "NetflixGPT is an intelligent movie suggestion app designed to elevate your movie-watching experience. Whether you're looking for the latest blockbusters or timeless classics, NetflixGPT has you covered.",
     fork: false,
     url: "https://api.github.com/repos/2sagarraut2/netflix-gpt",
     forks_url: "https://api.github.com/repos/2sagarraut2/netflix-gpt/forks",

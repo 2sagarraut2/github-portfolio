@@ -14,7 +14,7 @@ const RepoCard = ({
   return (
     <ul
       key={id}
-      className={`border-b-[1px] border-gray-200 pb-4 ${
+      className={`border-b-[1px] border-gray-200 pb-2 ${
         theme === "dark" ? "bg-black text-white" : "bg-white text-black"
       }`}
     >

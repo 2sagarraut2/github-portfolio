@@ -859,6 +859,13 @@ export const MYPROJECTS = [
   },
   {
     id: 2,
+    name: "NetflixGPT: Your Ultimate Movie Recommendation Assistant",
+    html_url: "https://github.com/2sagarraut2/netflix-gpt",
+    description:
+      "NetflixGPT is an intelligent movie suggestion app designed to elevate your movie-watching experience. Whether you're looking for the latest blockbusters or timeless classics, NetflixGPT has you covered. NetflixGPT combines the power of AI with curated movie databases to bring personalized recommendations at your fingertips, making it the perfect companion for movie enthusiasts.",
+  },
+  {
+    id: 2,
     name: "Swiggy WebApp clone",
     html_url: "https://github.com/2sagarraut2/deliveryapp",
     description:
@@ -906,3 +913,29 @@ export const SUPPORTED_LANGUAGES = [
     name: "Spanish",
   },
 ];
+
+export const convertToRelativeTime = (isoString) => {
+  const date = new Date(isoString);
+  const now = new Date();
+
+  const diffInSeconds = Math.floor((now - date) / 1000);
+
+  // Define time intervals in seconds
+  const intervals = {
+    year: 31536000, // 60 * 60 * 24 * 365
+    month: 2592000, // 60 * 60 * 24 * 30
+    day: 86400, // 60 * 60 * 24
+    hour: 3600, // 60 * 60
+    minute: 60,
+    second: 1,
+  };
+
+  for (const [unit, secondsInUnit] of Object.entries(intervals)) {
+    const amount = Math.floor(diffInSeconds / secondsInUnit);
+    if (amount >= 1) {
+      return `${amount} ${unit}${amount > 1 ? "s" : ""} ago`;
+    }
+  }
+
+  return "just now"; // If less than a second has passed
+};
