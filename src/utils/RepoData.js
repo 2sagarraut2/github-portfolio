@@ -174,7 +174,8 @@ const raw_data = [
       site_admin: false,
     },
     html_url: "https://github.com/2sagarraut2/github-portfolio",
-    description: "Github repo portfolio",
+    description:
+      "The GitHub Portfolio Web-App Clone is a sleek and professional portfolio web application inspired by GitHub's repository user interface. This project combines functionality with aesthetics, providing a clean, intuitive design for showcasing projects, skills, and achievements in a format that resonates with developers and recruiters.",
     fork: false,
     url: "https://api.github.com/repos/2sagarraut2/github-portfolio",
     forks_url:
@@ -321,7 +322,8 @@ const raw_data = [
       site_admin: false,
     },
     html_url: "https://github.com/2sagarraut2/blog-writer",
-    description: "This is a local blog manager application",
+    description:
+      "The Blog App is a sleek, user-friendly platform for creating, managing, and exploring blogs. Built with React, it provides a seamless experience for both content creators and readers. Users can add new blog posts, view a detailed blog list, and dive into individual blogs for an immersive reading experience.",
     fork: false,
     url: "https://api.github.com/repos/2sagarraut2/blog-writer",
     forks_url: "https://api.github.com/repos/2sagarraut2/blog-writer/forks",

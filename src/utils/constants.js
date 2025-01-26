@@ -591,13 +591,23 @@ export const TECHSTACK = [
     element: (
       <img
         className="cursor-pointer"
+        src="https://camo.githubusercontent.com/d6bb0e7157be00d6b0b6755ffa5884c82765bee79b2e0c9f32d8255dbe4b43d4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6e6578742e6a732d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d6e657874646f746a73266c6f676f436f6c6f723d7768697465"
+        alt="NextJS"
+      />
+    ),
+  },
+  {
+    id: 18,
+    element: (
+      <img
+        className="cursor-pointer"
         src="https://camo.githubusercontent.com/44827058d4b05d71c87e257a4ef305f59a6732654cd9de1ee2f818e15dba31a4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52656163745f526f757465722d4341343234353f7374796c653d666f722d7468652d6261646765266c6f676f3d72656163742d726f75746572266c6f676f436f6c6f723d7768697465"
         alt="React Router"
       />
     ),
   },
   {
-    id: 18,
+    id: 19,
     element: (
       <img
         className="cursor-pointer"
@@ -607,7 +617,7 @@ export const TECHSTACK = [
     ),
   },
   {
-    id: 19,
+    id: 20,
     element: (
       <img
         className="cursor-pointer"
@@ -617,7 +627,7 @@ export const TECHSTACK = [
     ),
   },
   {
-    id: 20,
+    id: 21,
     element: (
       <img
         className="cursor-pointer"
@@ -627,7 +637,7 @@ export const TECHSTACK = [
     ),
   },
   {
-    id: 21,
+    id: 22,
     element: (
       <img
         className="cursor-pointer"
@@ -637,7 +647,7 @@ export const TECHSTACK = [
     ),
   },
   {
-    id: 22,
+    id: 23,
     element: (
       <img
         className="cursor-pointer"
@@ -647,7 +657,7 @@ export const TECHSTACK = [
     ),
   },
   {
-    id: 23,
+    id: 24,
     element: (
       <img
         className="cursor-pointer"
@@ -657,7 +667,7 @@ export const TECHSTACK = [
     ),
   },
   {
-    id: 24,
+    id: 25,
     element: (
       <img
         className="cursor-pointer"
@@ -667,7 +677,7 @@ export const TECHSTACK = [
     ),
   },
   {
-    id: 25,
+    id: 26,
     element: (
       <img
         className="cursor-pointer"
@@ -677,7 +687,7 @@ export const TECHSTACK = [
     ),
   },
   {
-    id: 26,
+    id: 27,
     element: (
       <img
         className="cursor-pointer"
@@ -687,7 +697,7 @@ export const TECHSTACK = [
     ),
   },
   {
-    id: 27,
+    id: 28,
     element: (
       <img
         className="cursor-pointer"
@@ -697,7 +707,7 @@ export const TECHSTACK = [
     ),
   },
   {
-    id: 28,
+    id: 29,
     element: (
       <img
         className="cursor-pointer"
@@ -707,7 +717,7 @@ export const TECHSTACK = [
     ),
   },
   {
-    id: 29,
+    id: 30,
     element: (
       <img
         className="cursor-pointer"
@@ -717,7 +727,7 @@ export const TECHSTACK = [
     ),
   },
   {
-    id: 30,
+    id: 31,
     element: (
       <img
         className="cursor-pointer"
@@ -727,7 +737,7 @@ export const TECHSTACK = [
     ),
   },
   {
-    id: 31,
+    id: 32,
     element: (
       <img
         className="cursor-pointer"
@@ -737,7 +747,7 @@ export const TECHSTACK = [
     ),
   },
   {
-    id: 32,
+    id: 33,
     element: (
       <img
         className="cursor-pointer"
