@@ -397,31 +397,73 @@ export const RESULTLABEL = " result for repositories matching with ";
 export const WORKEXPERIENCES = [
   {
     id: 1,
-    role: "Service Desk L1 Engineer",
-    company: "Alten Calsoft Labs",
-    location: "Pune",
-    duration: "Jan 2019 - May 2019",
+    role: "Software Engineer",
+    company: "NCSI Technologies (India) Private Limited · Full-time",
+    location: "Pune · Hybrid",
+    duration: "Apr 2022 - Present",
+    tech: [
+      "Javascript (ES6+)",
+      "React.js",
+      "Redux.js",
+      "React Hooks",
+      "Material UI",
+      "API integration",
+      "Tailwind CSS",
+      "SQL",
+      "Git",
+      "Bitbucket",
+    ],
   },
   {
     id: 2,
-    role: "Associate Analyst",
-    company: "Wipro Technologies",
-    location: "Pune",
-    duration: "Dec 2019 - May 2021",
+    role: "Software Engineer",
+    company: "Anand Rathi Wealth Limited · Full-time",
+    location: "Mumbai · Remote",
+    duration: "May 2021 - Apr 2022",
+    tech: [
+      "Javascript (ES6+)",
+      "React.js",
+      "Redux.js",
+      "React Hooks",
+      "Responsive Web Design",
+      "Ant Design",
+      "API integration",
+      "Git",
+      "GitHub",
+    ],
   },
   {
     id: 3,
-    role: "Software Engineer",
-    company: "Anand Rathi Wealth Limited",
-    location: "Mumbai",
-    duration: "May 2021 - Apr 2022",
+    role: "Associate Analyst",
+    company: "Wipro Technologies · Full-time",
+    location: "Pune · On-site",
+    duration: "Dec 2019 - May 2021",
+    tech: ["HTML", "CSS", "Javascript (ES6+)", "XML"],
   },
   {
     id: 4,
-    role: "Software Engineer",
-    company: "NCSI Technologies (India) Private Limited",
-    location: "Pune",
-    duration: "Apr 2022 - Present",
+    role: "Service Desk L1 Engineer",
+    company: "Alten Calsoft Labs · Full-time",
+    location: "Pune · On-site",
+    duration: "Jan 2019 - May 2019",
+    tech: ["Customer Support", "Desktop Support", "AD Management"],
+  },
+  {
+    id: 4,
+    role: "Front End Developer",
+    company: "4fin Technologies · Freelance",
+    location: "Pune · Remote",
+
+    tech: [
+      "Javascript (ES6+)",
+      "React.js",
+      "Context API",
+      "React Hooks",
+      "Material UI",
+      "Ant Design",
+      "API integration",
+      "Git",
+    ],
   },
 ];
 
@@ -758,6 +800,22 @@ export const TECHSTACK = [
   },
 ];
 
+export const verified_logo = (
+  <svg
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="blue"
+    class="size-5"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z"
+    />
+  </svg>
+);
+
 export const SAGARRAUT2 = "2sagarraut2";
 export const SAGARRAUT = "2sagarraut2/README.md";
 
@@ -875,28 +933,28 @@ export const MYPROJECTS = [
       "NetflixGPT is an intelligent movie suggestion app designed to elevate your movie-watching experience. Whether you're looking for the latest blockbusters or timeless classics, NetflixGPT has you covered. NetflixGPT combines the power of AI with curated movie databases to bring personalized recommendations at your fingertips, making it the perfect companion for movie enthusiasts.",
   },
   {
-    id: 2,
+    id: 3,
     name: "Swiggy WebApp clone",
     html_url: "https://github.com/2sagarraut2/deliveryapp",
     description:
       "The Swiggy Web-App Clone is a feature-rich, responsive web application built to emulate the core functionalities and user experience of the Swiggy food delivery platform. This project demonstrates expertise in building scalable, user-friendly interfaces, seamless API integration, and real-time data handling, ensuring an interactive and intuitive user experience.",
   },
   {
-    id: 3,
+    id: 4,
     name: "Github Portfolio",
     description:
       "The GitHub Portfolio Web-App Clone is a sleek and professional portfolio web application inspired by GitHub's repository user interface. This project combines functionality with aesthetics, providing a clean, intuitive design for showcasing projects, skills, and achievements in a format that resonates with developers and recruiters.",
     html_url: "https://github.com/2sagarraut2/github-portfolio",
   },
   {
-    id: 4,
+    id: 5,
     name: "Blog App",
     description:
       "The Blog App is a sleek, user-friendly platform for creating, managing, and exploring blogs. Built with React, it provides a seamless experience for both content creators and readers. Users can add new blog posts, view a detailed blog list, and dive into individual blogs for an immersive reading experience.",
     html_url: "https://2sagarraut2.github.io/blog-writer/",
   },
   {
-    id: 5,
+    id: 6,
     name: "Shopping Cart",
     description:
       "The Shopping Cart Project is a modular and reusable feature designed to replicate the 'Add to Cart' functionality commonly found in e-commerce websites. Built using Redux, this project provides a robust solution for managing cart operations efficiently and can be easily integrated into any web application.",
@@ -949,3 +1007,39 @@ export const convertToRelativeTime = (isoString) => {
 
   return "just now"; // If less than a second has passed
 };
+
+export const NEW_TECH_STACK = [
+  {
+    id: "1",
+    title: "Programming Languages",
+    technologies: ["C", "C++", "Java", "HTML", "CSS", "JavaScript (ES6+)"],
+  },
+  {
+    id: "2",
+    title: "Libraries & Frameworks",
+    technologies: [
+      "React.js",
+      "Next.js",
+      "Redux / RTK",
+      "Material-UI",
+      "Tailwind CSS",
+      "Ant Design",
+    ],
+  },
+  {
+    id: "3",
+    title: "Tools & Platforms",
+    technologies: [
+      "Dev tools",
+      "Git / GitHub",
+      "Webpack",
+      "GitHub Actions | CI/CD",
+      "Postman",
+    ],
+  },
+  {
+    id: "4",
+    title: "Database Management",
+    technologies: ["MySQL", "SQL"],
+  },
+];

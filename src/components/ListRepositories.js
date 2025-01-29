@@ -156,7 +156,7 @@ const ListRepositories = () => {
     <div className="mt-4">
       {/* bg-gray-100 up */}
       <div>
-        <div className="flex flex-justify-between gap-2 flex-wrap text-sm border-b-[1px] border-gray-200 pb-4">
+        <div className="font-mono -tracking-wider flex flex-justify-between gap-2 flex-wrap text-sm border-b-[1px] border-gray-200 pb-4">
           <input
             name="seach-repository"
             placeholder="Find a repository..."

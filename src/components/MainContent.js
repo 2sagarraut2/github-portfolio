@@ -3,7 +3,7 @@ import {
   LINKEDINTAG,
   SAGARRAUT,
   // SOCIALLABEL,
-  TECHSTACK,
+  NEW_TECH_STACK,
   // TECHSTACKLABEL,
   // WELCOME,
 } from "../utils/constants";
@@ -79,11 +79,11 @@ const MainContent = ({ language }) => {
             text={SAGARRAUT}
             title={lang.en.WELCOME_TEXT}
           />
-          <div className="py-2">
+          <div className="py-2 font-mono -tracking-wider text-sm">
             <p dangerouslySetInnerHTML={{ __html: lang.en.INTRO_TEXT }} />
           </div>
           <div>
-            <h4 className="font-semibold text-xl py-2 mb-2 border-b-[#d1d9e0] border-b-solid border-b-[1px]">
+            <h4 className="font-mono -tracking-wider font-semibold text-xl py-2 mb-2 border-b-[#d1d9e0] border-b-solid border-b-[1px]">
               {lang.en.SOCIALS_TEXT}
             </h4>
             <p dir="auto">
@@ -102,12 +102,12 @@ const MainContent = ({ language }) => {
           </div>
           <div className="markdown-heading" dir="auto">
             <h1
-              className="font-semibold text-3xl pb-2 mt-6 mb-4 border-b-[#d1d9e0] border-b-solid border-b-[1px]"
+              className="font-mono -tracking-wider font-semibold text-base pb-2 mt-6 mb-4 border-b-[#d1d9e0] border-b-solid border-b-[1px]"
               dir="auto"
             >
               {lang.en.TECH_STACK_LABEL}
             </h1>
-            <p className="flex flex-wrap gap-2">
+            {/* <p className="flex flex-wrap gap-2">
               {TECHSTACK.map((tech) => {
                 return (
                   <span key={tech.id} className="">
@@ -115,7 +115,21 @@ const MainContent = ({ language }) => {
                   </span>
                 );
               })}
-            </p>
+            </p> */}
+            <div className="flex flex-wrap gap-8">
+              {NEW_TECH_STACK.map((item) => (
+                <div className="">
+                  <p className="font-mono text-sm underline underline-offset-2 w-fit">
+                    {item.title}
+                  </p>
+                  <ul className="font-mono text-xs list-[square] list-inside">
+                    {item.technologies.map((tech) => (
+                      <li>{tech}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

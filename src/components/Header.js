@@ -96,7 +96,9 @@ const Header = () => {
                       }`}
                     >
                       <span>
-                        <button className="mx-2">{SAGARRAUT2}</button>
+                        <button className="font-mono -tracking-wider mx-2">
+                          {SAGARRAUT2}
+                        </button>
                       </span>
                     </li>
                     {/* </Link> */}

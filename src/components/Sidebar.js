@@ -4,6 +4,7 @@ import { useState } from "react";
 import Avatar from "./Avatar";
 // import ScrollDownButton from "./ScrollDownButton";
 import { useTheme } from "./ThemeContext";
+import { verified_logo } from "../utils/constants";
 
 const Sidebar = () => {
   // eslint-disable-next-line
@@ -16,7 +17,7 @@ const Sidebar = () => {
     location: "India",
     login: "2sagarraut2",
     name: "Sagar Raut",
-    blog: "https://2sagarraut2.github.io/portfolio/",
+    blog: "https://2sagarraut2.github.io/github-portfolio/",
   });
   // eslint-disable-next-line
   const [loading, setloading] = useState(true);
@@ -77,8 +78,11 @@ const Sidebar = () => {
             </span>
           </div>
           <div className="top-0 float-left w-[100%] py-3 sticky">
-            <h1 className="leading-none grid">
-              <span className="text-2xl font-semibold">{userData.name}</span>
+            <h1 className="leading-none grid font-mono -tracking-wider">
+              <span className="text-2xl font-semibold flex items-center gap-2">
+                {userData.name} {verified_logo}
+              </span>
+
               <span className="text-xl font-light">
                 {userData.login} · <span itempprop="pronouns">he/him</span>
               </span>
@@ -86,14 +90,14 @@ const Sidebar = () => {
           </div>
         </div>
         <div
-          className="p-note user-profile-bio mb-3 js-user-profile-bio f4"
+          className="font-mono -tracking-wider p-note user-profile-bio mb-3 js-user-profile-bio f4"
           data-bio-text="Eat, Sleep, Code, Repeat...."
         >
           <div>{userData.bio}</div>
         </div>
         <ul className="flex list-none flex-col gap-1">
           <li
-            className="flex items-start text-sm gap-2 "
+            className="flex items-start text-sm gap-2 font-mono -tracking-wider"
             itempprop="worksFor"
             show_title="false"
             aria-label="Organization: NCS india"
@@ -110,12 +114,12 @@ const Sidebar = () => {
             >
               <path d="M1.75 16A1.75 1.75 0 0 1 0 14.25V1.75C0 .784.784 0 1.75 0h8.5C11.216 0 12 .784 12 1.75v12.5c0 .085-.006.168-.018.25h2.268a.25.25 0 0 0 .25-.25V8.285a.25.25 0 0 0-.111-.208l-1.055-.703a.749.749 0 1 1 .832-1.248l1.055.703c.487.325.779.871.779 1.456v5.965A1.75 1.75 0 0 1 14.25 16h-3.5a.766.766 0 0 1-.197-.026c-.099.017-.2.026-.303.026h-3a.75.75 0 0 1-.75-.75V14h-1v1.25a.75.75 0 0 1-.75.75Zm-.25-1.75c0 .138.112.25.25.25H4v-1.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 .75.75v1.25h2.25a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25ZM3.75 6h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1 0-1.5ZM3 3.75A.75.75 0 0 1 3.75 3h.5a.75.75 0 0 1 0 1.5h-.5A.75.75 0 0 1 3 3.75Zm4 3A.75.75 0 0 1 7.75 6h.5a.75.75 0 0 1 0 1.5h-.5A.75.75 0 0 1 7 6.75ZM7.75 3h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1 0-1.5ZM3 9.75A.75.75 0 0 1 3.75 9h.5a.75.75 0 0 1 0 1.5h-.5A.75.75 0 0 1 3 9.75ZM7.75 9h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1 0-1.5Z"></path>
             </svg>
-            <span className="">
+            <span className="font-mono -tracking-wider">
               <div>{userData.company}</div>
             </span>
           </li>
           <li
-            className="flex items-start text-sm gap-2"
+            className="font-mono -tracking-wider flex items-start text-sm gap-2"
             itempprop="homeLocation"
             show_title="false"
             aria-label="Home location: India"
@@ -132,13 +136,15 @@ const Sidebar = () => {
             >
               <path d="m12.596 11.596-3.535 3.536a1.5 1.5 0 0 1-2.122 0l-3.535-3.536a6.5 6.5 0 1 1 9.192-9.193 6.5 6.5 0 0 1 0 9.193Zm-1.06-8.132v-.001a5 5 0 1 0-7.072 7.072L8 14.07l3.536-3.534a5 5 0 0 0 0-7.072ZM8 9a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 9Z"></path>
             </svg>
-            <span className="p-label">{userData.location}</span>
+            <span className="p-label font-mono -tracking-wider">
+              {userData.location}
+            </span>
           </li>
 
           <li
             itempprop="email"
             aria-label="Email: 2sagarraut2@gmail.com"
-            className="flex items-start text-sm gap-2 pt-1 "
+            className="font-mono -tracking-wider flex items-start text-sm gap-2 pt-1 "
           >
             <svg
               className={`flex items-start text-sm gap-2 truncate fill-current ${
@@ -159,7 +165,7 @@ const Sidebar = () => {
           <li
             itempprop="url"
             data-test-selector="profile-website-url"
-            className="flex items-start text-sm gap-2 truncate"
+            className="font-mono -tracking-widest flex items-start text-sm gap-2 truncate"
           >
             <svg
               aria-hidden="true"

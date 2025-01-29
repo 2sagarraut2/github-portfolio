@@ -27,7 +27,7 @@ const HeaderMenus = ({
       >
         <button
           id={id}
-          className={`p-2 flex items-center rounded-lg text-sm ${
+          className={`font-mono -tracking-wider p-2 flex items-center rounded-lg text-sm ${
             theme === "dark" ? "hover:bg-gray-700" : "hover:bg-[#ebeef1]"
           } my-2`}
           onClick={() => handleMenuClicked(label)}

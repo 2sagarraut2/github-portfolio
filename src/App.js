@@ -36,7 +36,7 @@ function App() {
         visibleComponent={visibleComponent}
         setVisibleComponent={setVisibleComponent}
       />
-      <div className="max-w-none mx-6 sm:mx-12 md:mx-32 px-6 sm:px-8 md:px-12 mt-2 bg-transparent text-black">
+      <div className="max-w-none mx-6 sm:mx-12 md:mx-32 sm:px-8 md:px-12 mt-2 bg-transparent text-black">
         <div className="grid grid-cols-1 sm:grid-cols-[25%_75%] md:grid-cols-[25%_75%] gap-6">
           <Sidebar />
           {(visibleComponent === "Overview" && (
