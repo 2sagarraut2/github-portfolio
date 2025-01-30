@@ -118,13 +118,13 @@ const MainContent = ({ language }) => {
             </p> */}
             <div className="flex flex-wrap gap-8">
               {NEW_TECH_STACK.map((item) => (
-                <div className="">
+                <div className="" key={item.id}>
                   <p className="font-mono text-sm underline underline-offset-2 w-fit">
                     {item.title}
                   </p>
                   <ul className="font-mono text-xs list-[square] list-inside">
                     {item.technologies.map((tech) => (
-                      <li>{tech}</li>
+                      <li key={tech}>{tech}</li>
                     ))}
                   </ul>
                 </div>

@@ -281,7 +281,7 @@ export const REPOSITORYBUTTONS = [
         viewBox="0 0 16 16"
         width="16"
         height="16"
-        data-slot="icon"
+        fill="currentColor"
         style={{
           display: "inline-block",
           userSelect: "none",
@@ -449,7 +449,7 @@ export const WORKEXPERIENCES = [
     tech: ["Customer Support", "Desktop Support", "AD Management"],
   },
   {
-    id: 4,
+    id: 5,
     role: "Front End Developer",
     company: "4fin Technologies · Freelance",
     location: "Pune · Remote",
@@ -804,9 +804,9 @@ export const verified_logo = (
   <svg
     fill="none"
     viewBox="0 0 24 24"
-    stroke-width="1.5"
+    strokeWidth="1.5"
     stroke="blue"
-    class="size-5"
+    className="size-5"
   >
     <path
       strokeLinecap="round"

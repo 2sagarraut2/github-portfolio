@@ -4,6 +4,7 @@ import { AVATARURL, SAGARRAUT2 } from "../utils/constants";
 import Avatar from "./Avatar";
 import ThemeToggle from "./ThemeToggle";
 import { useTheme } from "./ThemeContext";
+import { useEffect } from "react";
 
 const Header = () => {
   //   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -11,6 +12,11 @@ const Header = () => {
   // const params = useLocation();
 
   const { theme } = useTheme();
+
+  useEffect(() => {
+    document.body.style.backgroundColor = theme === "dark" ? "#000" : "#fff";
+    document.body.style.color = theme === "dark" ? "#fff" : "#000";
+  }, [theme]);
 
   //   useEffect(() => {
   //     const mediaQuery = window.matchMedia("(max-width: 700px)");

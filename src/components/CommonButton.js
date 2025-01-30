@@ -88,7 +88,7 @@ const CommonButton = ({
       </button>
       {isOpen && (
         <ul
-          className={`absolute mt-2 w-32  border border-gray-200 rounded-md shadow-lg ${
+          className={`absolute mt-2 w-36 border border-gray-200 rounded-md shadow-lg ${
             theme === "dark" ? "bg-black text-white" : "bg-white text-black"
           }`}
         >

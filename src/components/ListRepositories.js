@@ -20,7 +20,7 @@ const ListRepositories = () => {
   const [searchText, setSearchText] = useState("");
   const [selectedItem, setSelectedItem] = useState("");
 
-  const theme = useTheme();
+  const { theme } = useTheme();
 
   // const token = process.env.REACT_APP_AUTH_TOKEN;
   // const octokit = new Octokit({
@@ -189,24 +189,20 @@ const ListRepositories = () => {
         </div>
         {searchText && (
           <div
-            className={`flex items-center border-b-[1px] border-gray-200 justify-between ${
-              theme === "dark" ? "bg-white text-black" : "bg-black text-white"
-            }`}
+            className={`flex items-center border-b-[1px] border-gray-200 justify-between
+            ${theme === "dark" ? "text-white" : "text-black"}
+          `}
           >
             <h5
-              className={`text-sm py-3 ${
-                theme === "dark" ? "bg-white text-black" : "bg-black text-white"
-              }`}
+              className={`text-sm py-3 text-inherit
+              ${theme === "dark" ? "text-white" : "text-black"}
+              `}
             >
               <strong>{filteredRepoData.length}</strong> {RESULTLABEL}
               <strong>{searchText}</strong>
             </h5>
             <button
-              className={`text-sm flex items-center hover:bg-[#ebeef1] py-1 px-1 rounded-lg ${
-                theme === "dark"
-                  ? "bg-white text-black"
-                  : "bg-black text-white hover:bg-slate-600"
-              }`}
+              className="text-sm flex items-center hover:bg-[#ebeef1] py-1 px-1 rounded-lg text-inherit"
               onClick={handleClearButtonClick}
             >
               <svg
@@ -216,11 +212,7 @@ const ListRepositories = () => {
                 version="1.1"
                 width="16"
                 data-view-component="true"
-                className={`octicon octicon-x issues-reset-query-icon mr-1 text-white rounded-md fill-current p-[1px] ${
-                  theme === "dark"
-                    ? "bg-white text-black"
-                    : "bg-black text-white hover:bg-slate-600"
-                }`}
+                className="octicon octicon-x issues-reset-query-icon mr-1 rounded-md p-[1px] fill-current"
               >
                 <path d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l3.22 3.22a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-3.22 3.22a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06Z"></path>
               </svg>
