@@ -53,10 +53,21 @@ const ListRepositories = () => {
   //     setRepoData(response.data);
 
   //     //   filtering data by latest updated_at and sting in setFilteredRepoData
-  //     const filteredData = response.data.sort((a, b) => {
+  //     const filteredData1 = response.data.sort((a, b) => {
   //       return new Date(b.pushed_at) - new Date(a.pushed_at);
   //     });
-  //     console.log("filter ", filteredData);
+
+  //     const filteredData2 = filteredData1.map((data) => ({
+  //       id: data.id,
+  //       html_url: data.html_url,
+  //       name: data.name,
+  //       visibility: data.visibility,
+  //       description: data.description,
+  //       language: data.language,
+  //       updatedAt: data.updated_at,
+  //       pushed_at: data.pushed_at,
+  //     }));
+  //     console.log("filter ", filteredData2);
   //   } catch (error) {
   //     console.error("Error fetching repositories:", error);
   //     setloading(false);
@@ -72,7 +83,7 @@ const ListRepositories = () => {
   const sortByLastUpdated = () => {
     setSearchText("");
     const sortedData = [...repoData].sort(
-      (a, b) => new Date(b.lastUpdated) - new Date(a.lastUpdated)
+      (a, b) => new Date(b.pushed_at) - new Date(a.pushed_at)
     );
     setFilteredRepoData(sortedData);
   };

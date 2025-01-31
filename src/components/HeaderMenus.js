@@ -22,7 +22,11 @@ const HeaderMenus = ({
         key={id}
         // className={pathname === path ? "border-b-2 border-[#fd8c73]" : ""}
         className={
-          label === visibleComponent ? "border-b-2 border-[#fd8c73]" : ""
+          label === visibleComponent
+            ? theme === "dark"
+              ? "border-b-2 border-white"
+              : "border-b-2 border-[#fd8c73]"
+            : ""
         }
       >
         <button
