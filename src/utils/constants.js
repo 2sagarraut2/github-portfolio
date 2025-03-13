@@ -450,7 +450,7 @@ export const WORKEXPERIENCES = [
   },
   {
     id: 5,
-    role: "Front End Developer",
+    role: "Frontend Developer",
     company: "4fin Technologies · Freelance",
     location: "Pune · Remote",
 
