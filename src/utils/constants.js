@@ -397,7 +397,7 @@ export const RESULTLABEL = " result for repositories matching with ";
 export const WORKEXPERIENCES = [
   {
     id: 1,
-    role: "Software Engineer",
+    role: "Senior Frontend Engineer",
     company: "NCSI Technologies (India) Private Limited · Full-time",
     location: "Pune · Hybrid",
     duration: "Apr 2022 - Present",
@@ -416,7 +416,7 @@ export const WORKEXPERIENCES = [
   },
   {
     id: 2,
-    role: "Software Engineer",
+    role: "Frontend Engineer",
     company: "Anand Rathi Wealth Limited · Full-time",
     location: "Mumbai · Remote",
     duration: "May 2021 - Apr 2022",
